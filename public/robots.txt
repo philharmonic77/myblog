@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://phil77.netlify.app/sitemap.xml
