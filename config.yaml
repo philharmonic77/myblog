@@ -51,7 +51,7 @@ languages:
     menu:
       main:
         - identifier: search
-          name: 🔍 Search
+          name: Search
           url: search
           weight: 1
         - identifier: home
