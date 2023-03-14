@@ -42,8 +42,8 @@ languages:
       imageWidth: 170
       imageHeight: 150
       buttons:
-        - name: 🍀 Note
-          url: posts/note
+        - name: 🍀 Tech
+          url: posts/tech
         - name: 📖 Read
           url: posts/read
         - name: 🎈  Life
