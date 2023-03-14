@@ -19,10 +19,9 @@ cover:
     alt: ""
     relative: false
 ---
-​<audio id="audio" controls="" preload="none">
-      <source id="mp3" src="https://github.com/philharmonic77/myblog/tree/main/static/audio/summer.mp3">
+ <audio controls autoplay>
+      <source id="mp3" src="/audio/summer.mp3">
 </audio>
-
 
 90后女生，现居上海，天真的理想主义者
 
