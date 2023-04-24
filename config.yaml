@@ -37,7 +37,7 @@ languages:
       enabled: true
       title: "Go the Extra Mile 🐾"
       # subtitle: "苟有恒 何必三更起五更眠"
-      imageUrl: "img/avatar.jpeg"
+      imageUrl: "img/avatar.jpg"
       imageTitle:
       imageWidth: 170
       imageHeight: 150
@@ -120,7 +120,7 @@ params:
 
   # label: # 左上角图标
   #   text: "Philharmonic77's Blog"
-  #   icon: "img/avatar.jpeg"
+  #   icon: "img/avatar.jpg"
   #   iconHeight: 25
 
   analytics:
@@ -128,11 +128,11 @@ params:
       SiteVerificationTag: ""
 
   assets:
-    favicon: "img/avatar.jpeg"
-    favicon16x16: "img/avatar.jpeg"
-    favicon32x32: "img/avatar.jpeg"
-    apple_touch_icon: "img/avatar.jpeg"
-    safari_pinned_tab: "img/avatar.jpeg"
+    favicon: "img/avatar.jpg"
+    favicon16x16: "img/avatar.jpg"
+    favicon32x32: "img/avatar.jpg"
+    apple_touch_icon: "img/avatar.jpg"
+    safari_pinned_tab: "img/avatar.jpg"
 
   cover:
     hidden: false # hide everywhere but not in structured data
