@@ -1,6 +1,6 @@
 ---
 author: "philharmonic77"
-title: "写python经常出错的一些问题"
+title: "写python易错笔记"
 date: "2023-04-24"
 description: ""
 tags: ["python"]
