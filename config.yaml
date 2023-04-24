@@ -39,7 +39,7 @@ languages:
       # subtitle: "苟有恒 何必三更起五更眠"
       imageUrl: "img/avatar.jpg"
       imageTitle:
-      imageWidth: 170
+      imageWidth: 150
       imageHeight: 150
       buttons:
         - name: 🍀 Tech
