@@ -2,12 +2,13 @@
 author: "philharmonic77"
 title: "写python经常出错的一些问题"
 date: "2023-04-24"
-description: "这篇blog里汇集了一些我在写python时比较容易出错的地方，很多地方重复学习过几次了依旧容易混淆，所以特意筛选出来以备查看。"
+description: ""
 tags: ["python"]
 hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
 ---
+这篇blog里汇集了一些我在写python时比较容易出错的地方，很多地方重复学习过几次了依旧容易混淆，所以特意筛选出来以备查看。    
 
 # 1. 函数作用域
 （1）函数内部可以读取全局变量； 
