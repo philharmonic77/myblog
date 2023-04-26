@@ -19,7 +19,8 @@ cover:
     alt: ""
     relative: false
 ---
-<audio controls autoplay>
+<!-- <audio controls autoplay> -->
+<audio>
     <source id="mp3" src="/audio/summer.mp3">
 </audio>
 
