@@ -64,4 +64,3 @@ UnboundLocalError: local variable 'b' referenced before assignment
 *参考资料：《流畅的python》第一版第7章里关于“函数作用域规则”的部分。*
 
 # 2. 类变量和成员变量
-test
