@@ -10,7 +10,7 @@ ShowBreadCrumbs: false
 ---
 这篇blog里汇集了一些我在写python时比较容易出错的地方，很多地方重复学习过几次了依旧容易混淆，所以特意筛选出来以备查看。    
 
-# 1. 函数作用域
+## 1. 函数作用域
 （1）函数内部可以读取全局变量； 
 
 ``` python
@@ -63,4 +63,4 @@ UnboundLocalError: local variable 'b' referenced before assignment
 ```
 *参考资料：《流畅的python》第一版第7章里关于“函数作用域规则”的部分。*
 
-# 2. 类变量和成员变量
+## 2. 类变量和成员变量
