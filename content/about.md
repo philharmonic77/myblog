@@ -20,7 +20,7 @@ cover:
     relative: false
 ---
 <!-- <audio controls autoplay> -->
-<audio>
+<audio controls>
     <source id="mp3" src="/audio/summer.mp3">
 </audio>
 
