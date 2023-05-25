@@ -12,7 +12,7 @@ ShowBreadCrumbs: false
 
 ## 1.安装brew
 
-brew是mac上常用的软件包管理工具，有了它安装或者卸载软件会比较方便。它的官方安装地址是这个：https://docs.brew.sh/Installation 。 但因为某些大家都知道的原因，我按照上面的命令安装多次多失败了，最后才找到下面这个靠谱的安装方式：
+brew是mac上常用的软件包管理工具，有了它安装或者卸载软件会比较方便。它的官方安装地址是这个：<https://docs.brew.sh/Installation>。 但因为某些大家都知道的原因，我按照上面的命令安装多次多失败了，最后才找到下面这个靠谱的安装方式：
 
 ``` shell
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
@@ -20,7 +20,7 @@ brew是mac上常用的软件包管理工具，有了它安装或者卸载软件�
 
 ## 2. 安装anaconda
 
-这个比较简单，在它的官网上选择合适的版本，按照指引一步一步安装就可以啦。官网是：https://www.anaconda.com/products/individual 。
+这个比较简单，在它的官网上选择合适的版本，按照指引一步一步安装就可以啦。官网是：<https://www.anaconda.com/products/individual>。
 
 ## 3.安装tensorflow
 
@@ -31,12 +31,12 @@ brew是mac上常用的软件包管理工具，有了它安装或者卸载软件�
 zsh: illegal hardware instruction python
 ```
 
-这是因为没有安装适合M1芯片的版本，可以在这里查看如何安装：https://github.com/apple/tensorflow_macos ，目前最新的适合M1的版本是v2.5。
+这是因为没有安装适合M1芯片的版本，可以在这里查看如何安装：<https://github.com/apple/tensorflow_macos>，目前最新的适合M1的版本是v2.5。
 
 我安装的是网友分享的适合mac的tensorflow2.4.1版本，具体步骤是：
 
 ### a.下载wheel文件（放到Downloads文件夹）
-https://drive.google.com/drive/folders/1oSipZLnoeQB0Awz8U68KYeCPsULy_dQ7
+<https://drive.google.com/drive/folders/1oSipZLnoeQB0Awz8U68KYeCPsULy_dQ7>
 
 ### b. 利用conda创建虚拟环境并安装
 虽然也可以在默认的python环境上安装，但进行环境隔离今后可以避免各种冲突，所以我采用的是这种方式。
