@@ -10,7 +10,7 @@ ShowBreadCrumbs: false
 ---
 背景：介绍如何在mac上搭建机器学习环境。
 
-## 1.安装brew
+## 1. 安装brew
 
 brew是mac上常用的软件包管理工具，有了它安装或者卸载软件会比较方便。它的官方安装地址是这个：<https://docs.brew.sh/Installation>。 但因为某些大家都知道的原因，我按照上面的命令安装多次多失败了，最后才找到下面这个靠谱的安装方式：
 
@@ -22,7 +22,7 @@ brew是mac上常用的软件包管理工具，有了它安装或者卸载软件�
 
 这个比较简单，在它的官网上选择合适的版本，按照指引一步一步安装就可以啦。官网是：<https://www.anaconda.com/products/individual>。
 
-## 3.安装tensorflow
+## 3. 安装tensorflow
 
 > 如果还希望可以在自己的mac上跑深度学习模型，可以看下这部分。目前，要想在macbook上用gpu训练模型还是不太现实的。但如果你想本地写好代码，在小样本上调试好，再放到服务器上跑，那么还是可以安装一下。
 
@@ -35,7 +35,7 @@ zsh: illegal hardware instruction python
 
 我安装的是网友分享的适合mac的tensorflow2.4.1版本，具体步骤是：
 
-### a.下载wheel文件（放到Downloads文件夹）
+### a. 下载wheel文件（放到Downloads文件夹）
 <https://drive.google.com/drive/folders/1oSipZLnoeQB0Awz8U68KYeCPsULy_dQ7>
 
 ### b. 利用conda创建虚拟环境并安装
@@ -55,11 +55,11 @@ conda deactivate
 conda remove -n tf38 -all
 ```
 
-## 4.配置jupyter notebook
+## 4. 配置jupyter notebook
 
 这部分主要包括如何在jupyter里找到刚才安装的tf环境，以及安装一些常用的notebook插件。
 
-### a.找到刚安装的虚拟环境
+### a. 找到刚安装的虚拟环境
 
 安装完anaconda之后，在terminal里输入jupyter notebook就可以打开了。但还需要完成以下几步才可以在“新建”菜单里找到tf38这个环境。
 ```shell
@@ -68,7 +68,7 @@ conda install ipykernel
 python -m ipykernel install-- user --name tf38
 ```
 
-### b.安装插件
+### b. 安装插件
 
 我用起来必不可少的notebook插件主要是代码自动补全和目录插件。可以通过执行下面的命令来安装：
 ``` shell 
@@ -78,7 +78,7 @@ jupyter contrib nbextentions install —user —skip-running-check
 ```
 之后，启动notebook，点击nbextensions，在众多可选择的插件中勾选就可以。如果需要自动目录，选择"table of content"，代码补全是"Hinterland"。
 
-## 5.安装graphviz
+## 5. 安装graphviz
 
 有可视化决策树，神经网络结构需求的小伙伴们还可以安装下graphviz，这个在安装了brew之后，只需要一个命令就可以完成啦！
 ``` shell 
