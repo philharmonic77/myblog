@@ -1,6 +1,6 @@
 ---
 author: "philharmonic77"
-title: "MacOs机器学习环境搭建"
+title: "MacOS机器学习环境搭建"
 date: "2021-12-04"
 description: ""
 tags: ["python","安装教程"]
@@ -12,7 +12,7 @@ ShowBreadCrumbs: false
 
 ## 1.安装brew
 
-brew是mac上常用的软件包管理工具，有了它安装或者卸载软件会比较方便。它的官方安装地址是这个：https://docs.brew.sh/Installation。 但因为某些大家都知道的原因，我按照上面的命令安装多次多失败了，最后才找到下面这个靠谱的安装方式：
+brew是mac上常用的软件包管理工具，有了它安装或者卸载软件会比较方便。它的官方安装地址是这个：https://docs.brew.sh/Installation 。 但因为某些大家都知道的原因，我按照上面的命令安装多次多失败了，最后才找到下面这个靠谱的安装方式：
 
 ``` shell
 /bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
@@ -20,13 +20,18 @@ brew是mac上常用的软件包管理工具，有了它安装或者卸载软件�
 
 ## 2. 安装anaconda
 
-这个比较简单，在它的官网上选择合适的版本，按照指引一步一步安装就可以啦。官网是：https://www.anaconda.com/products/individual。
+这个比较简单，在它的官网上选择合适的版本，按照指引一步一步安装就可以啦。官网是：https://www.anaconda.com/products/individual 。
 
 ## 3.安装tensorflow
 
 > 如果还希望可以在自己的mac上跑深度学习模型，可以看下这部分。目前，要想在macbook上用gpu训练模型还是不太现实的。但如果你想本地写好代码，在小样本上调试好，再放到服务器上跑，那么还是可以安装一下。
 
-直接通过conda或者pip安装最新版本的tensorflow在安装完之后并无法运行，在导入的时候会报错：zsh: illegal hardware instruction  python。这是因为没有安装适合M1芯片的版本，大家可以在这里查看如何安装：https://github.com/apple/tensorflow_macos，最新的适合M1的版本是v2.5。
+直接通过conda或者pip安装最新版本的tensorflow在安装完之后并无法运行，在导入的时候会报错：
+``` shell
+zsh: illegal hardware instruction python
+```
+
+这是因为没有安装适合M1芯片的版本，可以在这里查看如何安装：https://github.com/apple/tensorflow_macos ，目前最新的适合M1的版本是v2.5。
 
 我安装的是网友分享的适合mac的tensorflow2.4.1版本，具体步骤是：
 
