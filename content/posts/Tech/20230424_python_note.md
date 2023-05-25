@@ -1,7 +1,7 @@
 ---
 author: "philharmonic77"
 title: "python易错笔记"
-date: "2023-04-24"
+date: "2024-04-24"
 description: ""
 tags: ["python"]
 hideMeta: false
