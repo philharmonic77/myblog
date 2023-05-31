@@ -23,7 +23,7 @@ ShowBreadCrumbs: false
 |[demo2](https://github.com/philharmonic77/deep_interest_network/blob/main/notebook%20demo/2_simple_din_demo_v2.ipynb)| 模块化，可配置，熟悉tf的API|
 
 最终实现的模型结构： 
-<img src="/img/202305/din_structure.jpg"> 
+<img src="/img/202305/din_structure.jpg" width="1200" height="200"> 
 
 
 
