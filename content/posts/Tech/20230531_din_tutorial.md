@@ -1,6 +1,6 @@
 ---
 author: "philharmonic77"
-title: "动手实现DIN (一)"
+title: "动手实现DIN（一）"
 date: "2023-05-30"
 description: "用tensorflow 2 由浅入深实现DIN模型"
 tags: ["python","深度学习","tensorflow","推荐系统"]
@@ -23,7 +23,7 @@ ShowBreadCrumbs: false
 |[demo2](https://github.com/philharmonic77/deep_interest_network/blob/main/notebook%20demo/2_simple_din_demo_v2.ipynb)| 模块化，可配置，熟悉tf的API|
 
 最终实现的模型结构：  
-![model structure](img/202305/din_structure.png)
+![model structure](/static/img/202305/din_structure.png)
 
 
 
