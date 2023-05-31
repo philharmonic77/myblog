@@ -22,8 +22,8 @@ ShowBreadCrumbs: false
 |[demo1](https://github.com/philharmonic77/deep_interest_network/blob/main/notebook%20demo/1_simple_din_demo_v1.ipynb)| 顺序实现，有助于理解模型结构 |
 |[demo2](https://github.com/philharmonic77/deep_interest_network/blob/main/notebook%20demo/2_simple_din_demo_v2.ipynb)| 模块化，可配置，熟悉tf的API|
 
-最终实现的模型结构：  
-![model structure](/static/img/202305/din_structure.jpg)
+最终实现的模型结构： 
+<img src="/img/202305/din_structure.jpg"> 
 
 
 
