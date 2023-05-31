@@ -36,7 +36,7 @@ languages:
     profileMode:
       enabled: true
       title: "Go the Extra Mile 🐾"
-      # subtitle: "苟有恒 何必三更起五更眠"
+      # subtitle: "苟有恒 何必三更眠五更起"
       imageUrl: "img/avatar.jpg"
       imageTitle:
       imageWidth: 150
@@ -146,7 +146,8 @@ params:
     distance: 1000
     threshold: 0.4
     minMatchCharLength: 0
-    keys: [ "title", "permalink", "summary", "content" ]
+    keys: [ "title", "permalink", "summary"]
+    # keys: [ "title", "permalink", "summary", "content" ]
 
   # StartYear: 2019 # 底部开始年份
   # FilingNo: 填写自己的备案号 # 底部备案号
