@@ -24,7 +24,7 @@ ShowBreadCrumbs: false
 
 最终实现的模型结构：
 
-[img](/static/img/202305/din_structure.png)
+![img](/static/img/202305/din_structure.png)
 
 
 
