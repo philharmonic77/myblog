@@ -1,7 +1,7 @@
 ---
 author: "philharmonic77"
 title: "MacOS机器学习环境搭建"
-date: "2021-12-04"
+date: "2024-12-04"
 description: ""
 tags: ["python","安装教程"]
 hideMeta: false

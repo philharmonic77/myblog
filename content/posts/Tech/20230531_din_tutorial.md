@@ -1,7 +1,7 @@
 ---
 author: "philharmonic77"
 title: "动手实现DIN（一）"
-date: "2023-05-30"
+date: "2024-05-30"
 description: "用tensorflow 2 由浅入深实现DIN模型"
 tags: ["python","深度学习","tensorflow","推荐系统"]
 hideMeta: false
