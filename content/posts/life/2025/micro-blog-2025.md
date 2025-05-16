@@ -1,6 +1,6 @@
 ---
 title: "2025"
-date: "2025-01-01"
+date: "2025-05-16"
 aliases: ["/micro-blog-2025"]
 aliases: [/posts/life/micro-blog-2025]
 tags: ["Diary"]
