@@ -9,4 +9,5 @@ ShowBreadCrumbs: false
 
 #### 03-23
 肚肚有了新的进化，吵闹的时候用右手捂住左耳朵。可爱极了这个崽子。
-![pic3](images/IMG_0323_1.jpeg#center)
+
+<img src="images/IMG_0323_1.jpeg" width="200"/>
