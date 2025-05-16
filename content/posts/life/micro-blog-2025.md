@@ -1,9 +1,9 @@
 ---
-author: "philharmonic77"
-title: "生活碎片2503"
-date: "2025-03-01"
-description: ""
-tags: []
+title: "2025"
+date: "2025-01-01"
+aliases: ["/papermod-features"]
+aliases: [/posts/life/micro-blog-2025]
+tags: ["Diary"]
 hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
@@ -11,4 +11,4 @@ ShowBreadCrumbs: false
 
 #### 03-23
 肚肚有了新的进化，吵闹的时候用右手捂住左耳朵。可爱极了这个老肚。
-![](img/life/202503/1.jpg)
+![](images/2025/0323_1.jpg#center)
