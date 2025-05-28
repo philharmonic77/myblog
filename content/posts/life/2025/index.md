@@ -6,6 +6,16 @@ hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
 ---
+#### 05-28
+
+我儿子的颜值真高，躺着和竖抱起来，由于肉肉的走向不同，他有不同的样子。最近常常被他开心时候发出的一连串奶音吸引过去。马上就满90天了，夜里仍旧哼唧、扭动、抓脸不停。
+<div>
+<center class="half">
+<img src="images/IMG_0528_1.jpeg" width="200">
+<img src="images/IMG_0528_2.jpeg" width="200">
+ </center>
+</div>
+
 #### 05-19
 每天盯着自己的手手看，有时候还举起手来看。对什么都充满好奇~
 <center class="half">
