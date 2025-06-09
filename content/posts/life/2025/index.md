@@ -6,6 +6,50 @@ hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
 ---
+#### 06-08
+老肚100天了，时间真快，真喜欢当他的妈妈。
+
+他的体重达到了7.55kg，成为彻彻底底的小胖胖。今天出门有人问他是不是略微超重(overweight)啦😂终于再也不是满42天之前一直被医生说太瘦，需要换特殊奶粉的瘦小子了！
+
+今天上海入梅，下着大雨，我们带他出去徐汇拍摄照片，好折腾这个崽子，刚坐上车就一通暴哭，过百天却不能舒舒服服。
+<center class="half">
+<img src="images/IMG_0608_1.jpeg" width="200">
+ </center>
+
+相馆照片还没拿到，我先自己偷拍了几张花絮。
+<div>
+<center class="half">
+<img src="images/IMG_0608_2.jpeg" width="200">
+<img src="images/IMG_0608_3.jpeg" width="200">
+ </center>
+</div>
+
+今天也是玻璃心的妈妈，自从肚崽出生前我就对身边人千叮咛万嘱咐拍照关闭闪光灯，但我却在今天是用拍立得的时候，成为了那个罪人。十分对不起肚肚。
+
+#### 06-07
+儿子穿小背心，露出身上的肉肉真的很可爱。最近他很爱笑。随着身体的进化，夜里不再需要抱起来睡了，同时也很明显地能够认出我来了。
+<div>
+<center class="half">
+<img src="images/IMG_0607_1.jpeg" width="200">
+<img src="images/IMG_0607_2.jpeg" width="200">
+ </center>
+</div>
+
+#### 06-02
+最近肚肚可以举起两只手臂了，每天都在仔细观察自己的手手，还经常两手握在一起做出“恭喜恭喜”的动作。
+<center class="half">
+<img src="images/IMG_0602_1.jpeg" width="200">
+ </center>
+
+#### 06-01
+肚崽坐上新买的婴儿提篮，为下周坐车出门拍百天照做准备。包裹得严严实实的提篮上，他变得好严肃哦。
+<div>
+<center class="half">
+<img src="images/IMG_0601_1.jpeg" width="200">
+<img src="images/IMG_0601_2.jpeg" width="200">
+ </center>
+</div>
+
 #### 05-28
 
 我儿子的颜值真高，躺着和竖抱起来，由于肉肉的走向不同，他有不同的样子。最近常常被他开心时候发出的一连串奶音吸引过去。马上就满90天了，夜里仍旧哼唧、扭动、抓脸不停。
