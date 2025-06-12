@@ -6,6 +6,15 @@ hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
 ---
+#### 06-11
+老肚自个儿看着房顶笑的可开心了，我一掏出手机记录，他立马就屏住了。或许他是爱捣蛋的淘气包，而我是严厉的班主任吧。
+<div>
+<center class="half">
+<img src="images/IMG_0611_1.jpeg" width="200">
+<img src="images/IMG_0611_2.jpeg" width="200">
+ </center>
+</div>
+
 #### 06-08
 老肚100天了，时间真快，真喜欢当他的妈妈。
 
