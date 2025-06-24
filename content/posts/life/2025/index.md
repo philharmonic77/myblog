@@ -8,14 +8,6 @@ ShowBreadCrumbs: false
 ---
 #### 06-21
 最近没有偷懒，都有在好好练习抬头哦。
-<!-- <center class="half">
-<img src="images/IMG_0621_1.jpeg" width="200">
-<img src="images/IMG_0621_2.jpeg" width="200">
-</center>
-<center class="half">
-<img src="images/IMG_0621_3.jpeg" height="200">
-</center> -->
-
 <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
   <img src="images/IMG_0621_1.jpeg" alt="图片1" style="width: 45%; margin: 10px;">
   <img src="images/IMG_0621_2.jpeg" alt="图片2" style="width: 45%; margin: 10px;">
