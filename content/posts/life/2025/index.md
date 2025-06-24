@@ -15,6 +15,7 @@ ShowBreadCrumbs: false
 <center class="half">
 <img src="images/IMG_0621_3.jpeg" height="200">
 </center>
+
 #### 06-20
 被一包乐事薯片逗得好开心啊
 <center class="half">
