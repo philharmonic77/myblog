@@ -117,7 +117,7 @@ ShowBreadCrumbs: false
 #### 05-06
 开心的时候会发出"阿咕"的奶音
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-  <img src="images/IMG_0506_1.jpeg" alt="" style="width: 50%; margin: 2px;">
+  <img src="images/IMG_0506_1.jpg" alt="" style="width: 50%; margin: 2px;">
 </div>
 
 #### 03-23
