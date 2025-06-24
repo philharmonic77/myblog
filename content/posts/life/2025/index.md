@@ -6,6 +6,41 @@ hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
 ---
+#### 06-21
+最近没有偷懒，都有在好好练习抬头哦。
+<center class="half">
+<img src="images/IMG_0621_1.jpeg" width="200">
+<img src="images/IMG_0621_2.jpeg" width="200">
+</center>
+<center class="half">
+<img src="images/IMG_0621_3.jpeg" height="200">
+</center>
+#### 06-20
+被一包乐事薯片逗得好开心啊
+<center class="half">
+<img src="images/IMG_0620_1.jpeg" width="200">
+<img src="images/IMG_0620_2.jpeg" width="200">
+</center>
+
+#### 06-18
+继续去世纪公园的荷塘边小睡😴
+<center class="half">
+<img src="images/IMG_0618_1.jpeg" height="200">
+</center>
+
+#### 06-16
+很喜欢新买的床铃玩具，对着上面会旋转的小挂件看的很仔细，一个个地"迎来送往"。
+<center class="half">
+<img src="images/IMG_0616_1.jpeg" width="200">
+ </center>
+
+#### 06-14
+今天第一次把肚肚弄到世纪公园遛弯了，躺在睡篮里因为天气热到红温。
+<center class="half">
+<img src="images/IMG_0614_1.jpeg" width="200">
+<img src="images/IMG_0614_2.jpeg" width="200">
+ </center>
+
 #### 06-11
 老肚自个儿看着房顶笑的可开心了，我一掏出手机记录，他立马就屏住了。或许他是爱捣蛋的淘气包，而我是严厉的班主任吧。
 <center class="half">
