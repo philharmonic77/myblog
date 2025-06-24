@@ -10,7 +10,7 @@ ShowBreadCrumbs: false
 最近没有偷懒，都有在好好练习抬头哦。
 <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
   <img src="images/IMG_0621_1.jpeg" alt="图片1" style="width: 45%; margin: 10px;">
-  <img src="images/IMG_0621_2.jpeg" alt="图片2" style="width: 45%; margin: 10px;">
+  <img src="images/IMG_0621_1.jpeg" alt="图片2" style="width: 45%; margin: 10px;">
 </div>
 <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
   <img src="images/IMG_0621_3.jpeg" alt="图片1" style="width: 90%; margin: 10px;">
