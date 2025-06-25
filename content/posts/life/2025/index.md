@@ -67,7 +67,7 @@ ShowBreadCrumbs: false
   <img src="images/IMG_0608_3.jpeg" alt="" style="width: 35%; margin: 2px;">
 </div>
 
-今天也是玻璃心的妈妈，自从肚崽出生前我就对身边人千叮咛万嘱咐拍照关闭闪光灯，但我却在今天是用拍立得的时候，成为了那个罪人。十分对不起肚肚。
+自肚崽出生前,我就对身边人千叮咛万嘱咐拍照关闭闪光灯，但我却在今天是用闲置很久的拍立得的时候，忘记关掉了😢
 
 #### 06-07
 儿子穿小背心，露出身上的肉肉真的很可爱。最近他很爱笑。随着身体的进化，夜里不再需要抱起来睡了，同时也很明显地能够认出我来了。
@@ -124,4 +124,18 @@ ShowBreadCrumbs: false
 肚肚有了新的进化，吵闹的时候用右手捂住左耳朵。可爱极了这个崽子。
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
   <img src="images/IMG_0323_1.jpeg" alt="" style="width: 50%; margin: 2px;">
+</div>
+
+#### 03-01
+肚肚正式和大家见一面吧～
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0301_1.jpeg" alt="" style="width: 50%; margin: 2px;">
+</div>
+
+#### 02-28
+今天22:42，3320g的肚崽出生了！真是费了九牛二虎之力呀，当他趴在我身上的时候，他是一小只但又沉甸甸的一团肉肉，很胆小地感受着陌生的世界。
+
+他趴了大概半小时，我十分虚弱、疲惫，但是又如释重负。我感受着他的细微动作，真的很像前面几个月怀孕时候的胎动。这一刻，我和胎宝肚肚告别啦。
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0228_1.jpg" alt="" style="width: 50%; margin: 2px;">
 </div>
