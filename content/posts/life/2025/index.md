@@ -6,8 +6,19 @@ hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
 ---
+#### 07-01
+进入四月龄，小胖子抬头终于可以轻松10min啦！
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0701_1.jpg" alt="" style="width: 70%; margin: 2px;">
+</div>
+阿崽还有几个有意思的变化：
+
+1. 昨天突然有一次可以双手捧住奶瓶，自己喝奶啦！
+
+2. 既五月初开始说“阿咕”开始，最近进入婴语大爆发期，经常自言自语，我也会重复他的发音假装和他对话😂 目前他的发音还是以u音为主，比如：唔、咕、布、木 ~ （所以很可能也会很快会说自己的小名哦）另外，还出现过类似mom、ba的发音。
+
 #### 06-21
-最近没有偷懒，都有在好好练习抬头哦。
+最近没有偷懒，都有在好好练习抬头哦。有那么多肉肉，抬头可费力啦。
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
   <img src="images/IMG_0621_1.jpeg" alt="" style="width: 35%; margin: 2px;">
   <img src="images/IMG_0621_2.jpeg" alt="" style="width: 35%; margin: 2px;">
@@ -133,7 +144,7 @@ ShowBreadCrumbs: false
 </div>
 
 #### 02-28
-今天22:42，3320g的肚崽出生了！真是费了九牛二虎之力呀，当他趴在我身上的时候，他是一小只但又沉甸甸的一团肉肉，很胆小地感受着陌生的世界。
+今天22:42，3320g的肚崽出生了！我真是费了九牛二虎之力呀！当他趴在我身上的时候，他是一小只但又沉甸甸的一团肉肉，很胆小地感受着陌生的世界。
 
 他趴了大概半小时，我十分虚弱、疲惫，但是又如释重负。我感受着他的细微动作，真的很像前面几个月怀孕时候的胎动。这一刻，我和胎宝肚肚告别啦。
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
