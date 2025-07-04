@@ -6,6 +6,27 @@ hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
 ---
+#### 07-03
+阿崽的耳朵是我发掘出来的一个萌点，上半部分翘翘的，下半部分贴贴的，像个小精灵🧚
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0703_1.jpeg" alt="" style="width: 50%; margin: 2px;">
+</div>
+
+#### 07-02
+肚肚小品集《大王叫我来巡山》
+
+A：报告大王！唐僧师徒一行经历九九八十一四人已经渡河，朝咱们山洞的方向过来了！
+
+B：废物！不是早就告诉你们化装作农户，在河的那岸就截住他们吗？？
+
+A：小的该死小的该死！被那孙猴子识破了！大王饶命啊！！
+
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0702_1.jpeg" alt="" style="width: 30%; margin: 2px;">
+  <img src="images/IMG_0702_2.jpeg" alt="" style="width: 30%; margin: 2px;">
+  <img src="images/IMG_0702_3.jpeg" alt="" style="width: 30%; margin: 2px;">
+</div>
+
 #### 07-01
 进入四月龄，小胖子抬头终于可以轻松10min啦！
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
