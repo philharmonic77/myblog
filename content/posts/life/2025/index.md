@@ -15,11 +15,11 @@ ShowBreadCrumbs: false
 #### 07-02
 肚肚小品集《大王叫我来巡山》
 
-A：报告大王！唐僧师徒一行经历九九八十一四人已经渡河，朝咱们山洞的方向过来了！
+A：报告大王！唐僧师徒一行四人已经渡河，朝咱们山洞的方向过来了！
 
 B：废物！不是早就告诉你们化装作农户，在河的那岸就截住他们吗？？
 
-A：小的该死小的该死！被那孙猴子识破了！大王饶命啊！！
+A：小的该死小的该死！被那孙猴子识破了！求大王饶命啊！！
 
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
   <img src="images/IMG_0702_1.jpeg" alt="" style="width: 30%; margin: 2px;">
