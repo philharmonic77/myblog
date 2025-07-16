@@ -6,6 +6,26 @@ hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
 ---
+
+#### 07-15
+肚肚已经是翻身小达人了，还会在自己的小床上努力攀爬。
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0715_1.jpeg" alt="" style="width: 70%; margin: 2px;">
+</div>
+
+#### 07-13
+最近有一个发现，宝宝是特别懂大人情绪的。
+1. 你对着他假笑，他也只会回复你一个礼貌性的微笑。
+2. 在哄睡的时候，一旦你失去耐心，一心只想达到让他睡着的目的，他会变得暴躁难哄，突然爆哭、伸手打掉你的眼镜，很长时间都睡不着。
+
+所以我告诉自己一定要尽可能地温柔（这可不是我日常的性格），在哄睡的时候也会化身一个唐僧，小声对着肚肚说妈妈有多爱他、他有多么幸福。
+
+#### 07-10
+在世纪公园，cruz座驾上练习抬头，好奇肚肚可以坚持20min了。
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0710_1.jpeg" alt="" style="width: 70%; margin: 2px;">
+</div>
+
 #### 07-03
 阿崽的耳朵是我发掘出来的一个萌点，上半部分翘翘的，下半部分贴贴的，像个小精灵🧚
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
