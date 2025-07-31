@@ -7,6 +7,13 @@ searchHidden: false
 ShowBreadCrumbs: false
 ---
 
+
+#### 07-28
+正好五月龄，穿上粉红色的耀西连体服（妈妈同款），尝试前倾坐！
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0728_1.jpeg" alt="" style="width: 50%; margin: 2px;">
+</div>
+
 #### 07-21
 尝试培养肚肚的自主入睡能力，不每次都萝卜蹲或者摇动哄睡了。我侧躺在床上对着老儿子念经，讲三只小猪的故事。他睁着大眼睛盯着我的嘴巴，不知道我在做什么，肉肉的小手本来搭在我的手臂上，突然啪嗒一声重重地落下去，我就知道这个傻孩子他睡着了🥱zzz
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
