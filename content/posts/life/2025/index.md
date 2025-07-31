@@ -9,7 +9,7 @@ ShowBreadCrumbs: false
 
 
 #### 07-28
-正好五月龄，穿上粉红色的耀西连体服（妈妈同款），尝试前倾坐！
+正好五月龄，体重有9kg出头，穿上粉红色的耀西连体服（妈妈同款），尝试前倾坐！
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
   <img src="images/IMG_0728_1.jpeg" alt="" style="width: 50%; margin: 2px;">
 </div>
