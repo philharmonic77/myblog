@@ -7,6 +7,34 @@ searchHidden: false
 ShowBreadCrumbs: false
 ---
 
+#### 08-20
+
+
+#### 08-19
+
+
+#### 08-16
+
+
+#### 08-12
+小肚经常对着我表演：侧身头后仰90度，实在是不能更可爱了！
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0812_1.jpeg" alt="" style="width: 50%; margin: 2px;">
+</div>
+
+#### 08-09
+这阵子略微有点辛苦，在大夏天和爸爸、外公外婆一起在8月3号搬了个家，从海桐苑到了樱花坊。今天带肚肚回月子中心游泳。月子里的时候由于种种原因，三次游泳的额度都没有使用过，这次肚崽的第一次！  
+我们还是用安全提篮打车带他出门，路上他好奇地望着窗外，光线打在他的脸上，皮肤真是吹弹可破啊。
+
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0805_1.jpg" alt="" style="width: 30%; margin: 2px;">
+  <img src="images/IMG_0805_2.jpg" alt="" style="width: 30%; margin: 2px;">
+  <img src="images/IMG_0805_3.jpg" alt="" style="width: 30%; margin: 2px;">
+</div>
+
+
+#### 08-05
+最近趴的时候两个手肘不再整整齐齐叠放在身体前方，而是张开到两侧试图往前爬了。很可惜，崽崽非常卖力还是不能挪动丁丁点儿。
 
 #### 07-28
 正好五月龄，体重有9kg出头，穿上粉红色的耀西连体服（妈妈同款），尝试前倾坐！
