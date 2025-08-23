@@ -8,13 +8,24 @@ ShowBreadCrumbs: false
 ---
 
 #### 08-20
-
+扶着一点点似乎可以这样子坐几分钟了，肚肚更有自主性会更开心。最近给他洗澡澡他也不太愿意半躺着了，总希望坐起来，儿子又又又进化了。
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0820_1.jpeg" alt="" style="width: 70%; margin: 2px;">
+</div>
 
 #### 08-19
-
+睡觉不安分的人啊，整张1.8m的床都是他的，横着睡、竖着睡、斜着睡，甚至自己翻成下面这样，导致老母亲根本不敢闭眼。  
+转眼之间，老儿子已经好大一只了欸。
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0819_1.jpeg" alt="" style="width: 70%; margin: 2px;">
+</div>
 
 #### 08-16
-
+在大热天，四个人推车带肚肚去花木时光里，这是他第一次去商场。我们用二狗背带试着背了他，还去桂满陇吃了一顿饭。他真的好开心啊，毛茸茸的样子，像一个小嫩芽。
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0816_1.jpeg" alt="" style="width: 50%; margin: 2px;">
+  <img src="images/IMG_0816_2.jpeg" alt="" style="width: 40%; margin: 2px;">
+</div>
 
 #### 08-12
 小肚经常对着我表演：侧身头后仰90度，实在是不能更可爱了！
@@ -31,7 +42,6 @@ ShowBreadCrumbs: false
   <img src="images/IMG_0805_2.jpg" alt="" style="width: 30%; margin: 2px;">
   <img src="images/IMG_0805_3.jpg" alt="" style="width: 30%; margin: 2px;">
 </div>
-
 
 #### 08-05
 最近趴的时候两个手肘不再整整齐齐叠放在身体前方，而是张开到两侧试图往前爬了。很可惜，崽崽非常卖力还是不能挪动丁丁点儿。
