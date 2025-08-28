@@ -7,6 +7,14 @@ searchHidden: false
 ShowBreadCrumbs: false
 ---
 
+#### 08-28
+庆祝老肚满半岁了🎉🎉  
+大清早醒来我拉着他的手手说，妈妈上辈子是个女巫🧙‍♀️，我帮你算算你这辈子一定会无病无灾，开心幸福，是个好命的人啊。最近我不太有日期概念还以为今天是27号，无心的几句话正好成了半岁时妈妈的祝福。
+<div style="display: flex; justify-content: center; flex-wrap: wrap;">
+  <img src="images/IMG_0828_1.jpeg" alt="" style="width: 40%; margin: 2px;">
+  <img src="images/IMG_0828_2.jpeg" alt="" style="width: 40%; margin: 2px;">
+</div>
+
 #### 08-20
 扶着一点点似乎可以这样子坐几分钟了，肚肚更有自主性会更开心。最近给他洗澡澡他也不太愿意半躺着了，总希望坐起来，儿子又又又进化了。
 <div style="display: flex; justify-content: center; flex-wrap: wrap;">
