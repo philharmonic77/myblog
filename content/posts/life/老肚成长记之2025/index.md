@@ -1,5 +1,5 @@
 ---
-title: "老肚成长记"
+title: "老肚的2025成长记"
 date: "2025-01-01"
 tags: ["Diary"]
 hideMeta: false
