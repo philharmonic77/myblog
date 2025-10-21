@@ -7,4 +7,4 @@ searchHidden: false
 ShowBreadCrumbs: false
 ---
 
-{{< video src="images/IMG_0907_1.mp4" >}}
+{{< video src="/videos/IMG_0907_1.mp4" >}}
