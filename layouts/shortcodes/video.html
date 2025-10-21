@@ -1,0 +1,33 @@
+{{/* 
+  Hugo video shortcode
+  Usage example:
+  {{< video src="/videos/demo.mp4" poster="/images/thumb.jpg" width="800" autoplay="false" loop="false" muted="false" >}}
+*/}}
+
+{{ $src := .Get "src" }}
+{{ $poster := .Get "poster" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $autoplay := .Get "autoplay" | default "false" }}
+{{ $loop := .Get "loop" | default "false" }}
+{{ $muted := .Get "muted" | default "false" }}
+
+<style>
+.responsive-video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em 0;
+}
+</style>
+
+<video 
+  class="responsive-video"
+  {{ if ne $width "100%" }}width="{{ $width }}"{{ end }}
+  {{ if eq $autoplay "true" }}autoplay{{ end }}
+  {{ if eq $loop "true" }}loop{{ end }}
+  {{ if eq $muted "true" }}muted{{ end }}
+  controls
+  {{ if $poster }}poster="{{ $poster }}"{{ end }}>
+  <source src="{{ $src | relURL }}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
