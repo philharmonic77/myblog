@@ -23,9 +23,9 @@ ShowBreadCrumbs: false
 #### 09-07
 最近喜欢“仰泳“，喜欢吃米粉，喜欢五个手指并用在床单上抓抓~  
 最重要的是，可以翻身到180度俯卧，再翻回来啦！
-<div style="display: flex; justify-content: center; flex-wrap: wrap;">
-  <img src="images/IMG_0915_1.MOV" alt="" style="width: 70%; margin: 2px;">
-</div>
+<video controls width="640">
+  <source src="images/IMG_0915_1.mp4" type="video/mp4">
+</video>
 
 #### 08-31
 最近有点婴语大爆发的前兆，尤其是夜里打滚的时候，嘴巴里呜哩哇啦吐出一大串我们都没听过的发音。  
