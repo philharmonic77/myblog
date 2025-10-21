@@ -23,8 +23,9 @@ ShowBreadCrumbs: false
 #### 09-07
 最近喜欢“仰泳“，喜欢吃米粉，喜欢五个手指并用在床单上抓抓~  
 最重要的是，可以翻身到180度俯卧，再翻回来啦！
-<video controls width="640">
-  <source src="images/IMG_0915_1.mp4" type="video/mp4">
+<video width="640" height="360" controls>
+  <source src="images/IMG_0907_1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
 </video>
 
 #### 08-31
