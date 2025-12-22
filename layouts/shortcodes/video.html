@@ -203,3 +203,41 @@ if (!window.__videoWifiAutoplayInit) {
   })();
 }
 </script>
+
+<script>
+if (!window.__videoMobileFullscreenInit) {
+  window.__videoMobileFullscreenInit = true;
+  (function () {
+    function isCoarsePointer() {
+      return window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    }
+
+    function requestFullscreen(video) {
+      if (document.fullscreenElement) return;
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+      }
+    }
+
+    function init() {
+      var videos = document.querySelectorAll('video');
+      videos.forEach(function (video) {
+        if (video.__mobileFullscreenBound) return;
+        video.__mobileFullscreenBound = true;
+        video.addEventListener('click', function () {
+          if (!isCoarsePointer()) return;
+          requestFullscreen(video);
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+}
+</script>

@@ -77,6 +77,24 @@
   video.addEventListener('ended', sync);
   sync();
 
+  function isCoarsePointer() {
+    return window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  }
+
+  function requestFullscreen() {
+    if (document.fullscreenElement) return;
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitEnterFullscreen) {
+      video.webkitEnterFullscreen();
+    }
+  }
+
+  video.addEventListener('click', function () {
+    if (!isCoarsePointer()) return;
+    requestFullscreen();
+  });
+
   function applySize() {
     var w = video.videoWidth;
     var h = video.videoHeight;

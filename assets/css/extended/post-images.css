@@ -292,6 +292,12 @@
   height: auto;
   border-radius: 6px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  opacity: 1;
+  transition: opacity 180ms ease;
+}
+
+.gallery-lightbox.single .gallery-lightbox-btn {
+  display: none;
 }
 
 @media (hover: none), (pointer: coarse) {
