@@ -1,0 +1,154 @@
+{{- if .Params.pet }}
+<div class="page-pet" aria-hidden="true" data-count="{{ .Params.pet | default 3 }}">
+  <div class="page-pet-layer"></div>
+</div>
+<script>
+if (!window.__pagePetInit) {
+  window.__pagePetInit = true;
+  (function () {
+    function rand(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function makePet(layer, size, y, minX, maxX, hue, startDelay) {
+      var wrap = document.createElement('span');
+      wrap.className = 'page-pet-item';
+      var body = document.createElement('img');
+      body.className = 'page-pet-body';
+      body.src = '/img/pet-body.webp';
+      body.alt = '';
+      body.decoding = 'async';
+      var legs = document.createElement('img');
+      legs.className = 'page-pet-legs';
+      legs.src = '/img/pet-legs.webp';
+      legs.alt = '';
+      legs.decoding = 'async';
+      var sat = rand(1.1, 1.8);
+      var filter = 'hue-rotate(' + hue.toFixed(1) + 'deg) saturate(' + sat.toFixed(2) + ')';
+      body.style.filter = filter;
+      legs.style.filter = filter;
+      wrap.appendChild(legs);
+      wrap.appendChild(body);
+      layer.appendChild(wrap);
+      wrap.style.opacity = '0';
+      return {
+        el: wrap,
+        body: body,
+        legs: legs,
+        x: minX - size - rand(0, size * 2),
+        y: y,
+        baseY: y,
+        vx: rand(0.02, 0.40),
+        vy: 0,
+        paused: 0,
+        delay: Math.floor(startDelay || rand(60, 600))
+      };
+    }
+
+    function wrap(p, size, w, h) {
+      if (p.x > w + size) {
+        p.x = -size - rand(0, size * 2);
+        p.el.style.opacity = '0';
+        p.delay = Math.floor(rand(60, 600));
+        p.vx = rand(0.02, 0.40);
+        var hue = rand(0, 360);
+        var sat = rand(1.1, 1.8);
+        var filter = 'hue-rotate(' + hue.toFixed(1) + 'deg) saturate(' + sat.toFixed(2) + ')';
+        if (p.body) p.body.style.filter = filter;
+        if (p.legs) p.legs.style.filter = filter;
+      }
+    }
+
+    function step(p, size, w, h) {
+      if (p.delay > 0) {
+        p.delay -= 1;
+        if (p.delay === 0) {
+          p.el.style.opacity = '1';
+        }
+        return;
+      }
+      if (p.paused > 0) {
+        p.paused -= 1;
+        p.el.classList.add('paused');
+        return;
+      }
+      p.el.classList.remove('paused');
+      if (Math.random() < 0.002) {
+        p.paused = Math.floor(rand(100, 500));
+        p.vx = rand(0.02, 0.40);
+        p.vy = 0;
+      }
+        p.x += Math.min(p.vx, 1.2);
+      p.y += p.vy;
+      wrap(p, size, w, h);
+    }
+
+    function render(p) {
+      p.el.style.transform = 'translate(' + p.x + 'px,' + p.y + 'px)';
+    }
+
+    function init() {
+      var root = document.querySelector('.page-pet');
+      if (!root) return;
+      var layer = root.querySelector('.page-pet-layer');
+      var count = parseInt(root.getAttribute('data-count'), 10) || 3;
+      var size = parseFloat(getComputedStyle(root).getPropertyValue('--pet-size')) || 28;
+      var pets = [];
+      var host = root.closest('.post-header') || document.body;
+
+      function getBounds() {
+        var rect = host.getBoundingClientRect();
+        var width = Math.max(rect.width, 120);
+        var height = Math.max(rect.height, size + 8);
+        return { w: width, h: height };
+      }
+
+      var bounds = getBounds();
+      var h = bounds.h;
+      var used = [];
+      var delayCursor = 0;
+      for (var i = 0; i < count; i++) {
+        var y = Math.round(h - size);
+        var minX = 0;
+        var maxX = bounds.w - size;
+        var hue;
+        var tries = 0;
+        do {
+          hue = rand(0, 360);
+          tries += 1;
+        } while (used.some(function (h) { return Math.abs(h - hue) < 60; }) && tries < 20);
+        used.push(hue);
+        if (i === 0) {
+          delayCursor = 0;
+        } else {
+          delayCursor += Math.floor(rand(120, 1200));
+        }
+        pets.push(makePet(layer, size, y, minX, maxX, hue, delayCursor));
+      }
+
+      function tick() {
+        bounds = getBounds();
+        var w = bounds.w;
+        var h = bounds.h;
+        var y = Math.round(h - size);
+        pets.forEach(function (p) {
+          p.baseY = y;
+          step(p, size, w, h);
+          p.y = p.baseY;
+          render(p);
+        });
+        requestAnimationFrame(tick);
+      }
+
+      tick();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+}
+</script>
+{{- end }}

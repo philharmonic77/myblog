@@ -5,6 +5,7 @@ tags: ["Diary"]
 hideMeta: false
 searchHidden: false
 ShowBreadCrumbs: false
+pet: 7
 ---
 #### 11-26
 最近忙得没有时间记录我可爱的老儿子～

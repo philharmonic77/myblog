@@ -7,6 +7,7 @@
       {{ .Title }}
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
     </h1>
+    {{- partial "pet.html" . }}
     {{- if .Description }}
     <div class="post-description">
       {{ .Description }}
