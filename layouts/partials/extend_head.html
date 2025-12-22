@@ -1,4 +1,56 @@
 {{- /* Head custom content area start */ -}}
 {{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
 {{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
+<script>
+if (!window.__imgWatermarkInit) {
+  window.__imgWatermarkInit = true;
+  (function () {
+    function apply() {
+      var imgs = document.querySelectorAll('.post-content img');
+      imgs.forEach(function (img) {
+        if (img.closest('.gallery-lightbox')) return;
+        if (img.closest('.img-watermark')) return;
+        var holder;
+        var parent = img.parentElement;
+        if (parent && parent.classList.contains('gallery-zoom')) {
+          holder = parent;
+        } else {
+          holder = document.createElement('span');
+          holder.className = 'watermark-holder';
+          img.parentNode.insertBefore(holder, img);
+          holder.appendChild(img);
+          var moveClasses = ['w-40', 'w-60', 'w-80', 'w-100', 'center'];
+          moveClasses.forEach(function (cls) {
+            if (img.classList.contains(cls)) {
+              holder.classList.add(cls);
+              img.classList.remove(cls);
+            }
+          });
+        }
+        if (!holder.classList.contains('watermark-holder')) {
+          holder.classList.add('watermark-holder');
+        }
+        if (!holder.querySelector('.img-watermark')) {
+          var mark = document.createElement('span');
+          mark.className = 'img-watermark';
+          var icon = document.createElement('img');
+          icon.className = 'img-watermark-icon';
+          icon.src = '/img/watermark.webp';
+          icon.alt = '';
+          icon.decoding = 'async';
+          mark.appendChild(icon);
+          mark.appendChild(document.createTextNode('PHIL77'));
+          holder.appendChild(mark);
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', apply);
+    } else {
+      apply();
+    }
+  })();
+}
+</script>
 {{- /* Head custom content area end */ -}}

@@ -105,6 +105,9 @@
     preload="{{ if eq $lazy "true" }}none{{ else }}{{ $preload }}{{ end }}"
     controls
     playsinline
+    controlsList="nodownload"
+    disablepictureinpicture
+    oncontextmenu="return false"
     {{ if $posterURL }}poster="{{ $posterURL }}"{{ end }}>
     {{ if eq $lazy "true" }}
       <source data-src="{{ $srcURL }}" data-type="video/mp4">
