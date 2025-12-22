@@ -334,14 +334,15 @@
   background: rgba(0, 0, 0, 0.55);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
   cursor: pointer;
+  z-index: 2;
 }
 
 .gallery-lightbox-btn.prev {
-  left: 16px;
+  left: max(16px, env(safe-area-inset-left));
 }
 
 .gallery-lightbox-btn.next {
-  right: 16px;
+  right: max(16px, env(safe-area-inset-right));
 }
 
 .gallery-lightbox-btn::before {
@@ -412,6 +413,14 @@
 }
 
 .gallery-lightbox.single .gallery-lightbox-btn {
+  display: none;
+}
+
+.gallery-lightbox.at-start .gallery-lightbox-btn.prev {
+  display: none;
+}
+
+.gallery-lightbox.at-end .gallery-lightbox-btn.next {
   display: none;
 }
 

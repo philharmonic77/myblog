@@ -196,6 +196,8 @@ if (!window.__galleryLightboxInit) {
       var i = ((index % items.length) + items.length) % items.length;
       lb.__galleryItems = items;
       lb.__galleryIndex = i;
+      lb.classList.toggle('at-start', i === 0);
+      lb.classList.toggle('at-end', i === items.length - 1);
       var link = items[i];
       setImage(lb, { src: link.getAttribute('data-full') || link.getAttribute('href'), alt: link.querySelector('img') && link.querySelector('img').alt });
     }
