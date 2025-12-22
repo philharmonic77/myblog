@@ -30,7 +30,7 @@ if (!window.__pagePetInit) {
       wrap.appendChild(legs);
       wrap.appendChild(body);
       layer.appendChild(wrap);
-      wrap.style.opacity = '0';
+      wrap.style.opacity = startDelay ? '0' : '1';
       return {
         el: wrap,
         body: body,
@@ -41,7 +41,7 @@ if (!window.__pagePetInit) {
         vx: rand(0.02, 0.40),
         vy: 0,
         paused: 0,
-        delay: Math.floor(startDelay || rand(60, 600))
+        delay: Math.floor(startDelay || 0)
       };
     }
 
