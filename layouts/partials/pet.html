@@ -10,7 +10,7 @@ if (!window.__pagePetInit) {
       return Math.random() * (max - min) + min;
     }
 
-    function makePet(layer, size, y, minX, maxX, hue, startDelay) {
+    function makePet(layer, size, y, minX, maxX, hue, startDelay, startX) {
       var wrap = document.createElement('span');
       wrap.className = 'page-pet-item';
       var body = document.createElement('img');
@@ -35,7 +35,7 @@ if (!window.__pagePetInit) {
         el: wrap,
         body: body,
         legs: legs,
-        x: minX - size - rand(0, size * 2),
+        x: (typeof startX === 'number') ? startX : (minX - size - rand(0, size * 2)),
         y: y,
         baseY: y,
         vx: rand(0.02, 0.40),
@@ -120,10 +120,11 @@ if (!window.__pagePetInit) {
         used.push(hue);
         if (i === 0) {
           delayCursor = 0;
+          pets.push(makePet(layer, size, y, minX, maxX, hue, delayCursor, 0));
         } else {
           delayCursor += Math.floor(rand(120, 1200));
+          pets.push(makePet(layer, size, y, minX, maxX, hue, delayCursor));
         }
-        pets.push(makePet(layer, size, y, minX, maxX, hue, delayCursor));
       }
 
       function tick() {
