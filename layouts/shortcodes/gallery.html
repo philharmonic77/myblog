@@ -1,0 +1,216 @@
+{{/*
+  Hugo image gallery shortcode
+  Usage example:
+  {{< gallery images="a.jpg,b.jpg,c.jpg" captions="A,B,C" cols="3" >}}
+  {{< gallery images="a.jpg,b.jpg,c.jpg,d.jpg" layout="masonry" cols="3" >}}
+  {{< gallery images="a.jpg,b.jpg,c.jpg" layout="wechat" >}}
+*/}}
+
+{{ $page := .Page }}
+{{ $imagesParam := .Get "images" }}
+{{ if not $imagesParam }}
+  {{ errorf "gallery shortcode requires images param" }}
+{{ end }}
+
+{{ $rawImages := split $imagesParam "," }}
+{{ $images := slice }}
+{{ range $rawImages }}
+  {{ $img := trim . " " }}
+  {{ if $img }}
+    {{ $images = $images | append $img }}
+  {{ end }}
+{{ end }}
+
+{{ if eq (len $images) 0 }}
+  {{ errorf "gallery shortcode requires at least one image" }}
+{{ end }}
+
+{{ $captions := slice }}
+{{ with .Get "captions" }}
+  {{ $captions = split . "," }}
+{{ end }}
+
+{{ $alts := slice }}
+{{ with .Get "alts" }}
+  {{ $alts = split . "," }}
+{{ end }}
+
+{{ $count := len $images }}
+{{ $colsParam := .Get "cols" }}
+{{ $colsFinal := $colsParam }}
+{{ if not $colsFinal }}
+  {{ if eq $count 1 }}
+    {{ $colsFinal = "1" }}
+  {{ else if eq $count 2 }}
+    {{ $colsFinal = "2" }}
+  {{ else if eq $count 3 }}
+    {{ $colsFinal = "3" }}
+  {{ else if eq $count 4 }}
+    {{ $colsFinal = "2" }}
+  {{ else }}
+    {{ $colsFinal = "3" }}
+  {{ end }}
+{{ end }}
+
+{{ $ratio := .Get "ratio" }}
+{{ $layout := .Get "layout" | default "grid" }}
+{{ $zoom := .Get "zoom" | default "true" }}
+
+<div class="img-gallery{{ if eq $layout "masonry" }} masonry{{ end }}{{ if eq $layout "wechat" }} wechat{{ end }}" style="--gallery-cols: {{ $colsFinal }};" data-count="{{ $count }}" data-layout="{{ $layout }}">
+  {{ range $i, $src := $images }}
+    {{ $srcURL := "" }}
+    {{ if hasPrefix $src "/" }}
+      {{ $srcURL = $src | relURL }}
+    {{ else }}
+      {{ $res := or ($page.Resources.GetMatch $src) ($page.Resources.GetMatch (printf "**/%s" $src)) }}
+      {{ if $res }}
+        {{ $srcURL = $res.RelPermalink }}
+      {{ else }}
+        {{ $srcURL = $src | relURL }}
+      {{ end }}
+    {{ end }}
+
+    {{ $caption := "" }}
+    {{ if lt $i (len $captions) }}
+      {{ $caption = trim (index $captions $i) " " }}
+    {{ end }}
+
+    {{ $alt := "" }}
+    {{ if lt $i (len $alts) }}
+      {{ $alt = trim (index $alts $i) " " }}
+    {{ else if $caption }}
+      {{ $alt = $caption }}
+    {{ end }}
+
+    <figure class="gallery-item">
+      {{ if eq $zoom "true" }}
+        <a class="gallery-zoom" href="{{ $srcURL }}" data-full="{{ $srcURL }}">
+          <img loading="lazy" src="{{ $srcURL }}" alt="{{ $alt }}"{{ if $ratio }} style="aspect-ratio: {{ $ratio }}; object-fit: cover;"{{ end }}>
+        </a>
+      {{ else }}
+        <img loading="lazy" src="{{ $srcURL }}" alt="{{ $alt }}"{{ if $ratio }} style="aspect-ratio: {{ $ratio }}; object-fit: cover;"{{ end }}>
+      {{ end }}
+      {{ if $caption }}
+        <figcaption class="gallery-caption">{{ $caption }}</figcaption>
+      {{ end }}
+    </figure>
+  {{ end }}
+</div>
+
+{{ if eq $zoom "true" }}
+<script>
+if (!window.__galleryLightboxInit) {
+  window.__galleryLightboxInit = true;
+  (function () {
+    function ensureLightbox() {
+      var existing = document.querySelector('.gallery-lightbox');
+      if (existing) return existing;
+      var lb = document.createElement('div');
+      lb.className = 'gallery-lightbox';
+      lb.innerHTML = '<button class=\"gallery-lightbox-btn prev\" type=\"button\" aria-label=\"Previous\"></button><div class=\"gallery-lightbox-inner\"><img alt=\"\"></div><button class=\"gallery-lightbox-btn next\" type=\"button\" aria-label=\"Next\"></button>';
+      lb.addEventListener('click', function (e) {
+        if (e.target !== lb) return;
+        lb.classList.remove('open');
+      });
+      document.body.appendChild(lb);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') lb.classList.remove('open');
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+      });
+      return lb;
+    }
+
+    function setImage(lb, item) {
+      var img = lb.querySelector('img');
+      img.src = item.src;
+      img.alt = item.alt || '';
+    }
+
+    function getGalleryItems(link) {
+      var gallery = link.closest('.img-gallery');
+      if (!gallery) return [link];
+      return Array.prototype.slice.call(gallery.querySelectorAll('.gallery-zoom'));
+    }
+
+    function showAt(lb, items, index) {
+      if (!items.length) return;
+      var i = ((index % items.length) + items.length) % items.length;
+      lb.__galleryItems = items;
+      lb.__galleryIndex = i;
+      var link = items[i];
+      setImage(lb, { src: link.getAttribute('data-full') || link.getAttribute('href'), alt: link.querySelector('img') && link.querySelector('img').alt });
+    }
+
+    function showPrev() {
+      var lb = document.querySelector('.gallery-lightbox.open');
+      if (!lb || !lb.__galleryItems) return;
+      showAt(lb, lb.__galleryItems, lb.__galleryIndex - 1);
+    }
+
+    function showNext() {
+      var lb = document.querySelector('.gallery-lightbox.open');
+      if (!lb || !lb.__galleryItems) return;
+      showAt(lb, lb.__galleryItems, lb.__galleryIndex + 1);
+    }
+
+    function onClick(e) {
+      var link = e.target.closest('.gallery-zoom');
+      if (!link) return;
+      e.preventDefault();
+      var lb = ensureLightbox();
+      var items = getGalleryItems(link);
+      var index = items.indexOf(link);
+      showAt(lb, items, index);
+      lb.classList.add('open');
+    }
+
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('gallery-lightbox-btn')) {
+        if (e.target.classList.contains('prev')) showPrev();
+        if (e.target.classList.contains('next')) showNext();
+      }
+    });
+
+    document.addEventListener('click', onClick);
+  })();
+}
+</script>
+{{ end }}
+
+{{ if eq $layout "wechat" }}
+<script>
+if (!window.__wechatGallerySizeInit) {
+  window.__wechatGallerySizeInit = true;
+  (function () {
+    function classify(img) {
+      var item = img.closest('.gallery-item');
+      if (!item) return;
+      var w = img.naturalWidth;
+      var h = img.naturalHeight;
+      if (!w || !h) return;
+      item.classList.remove('is-portrait', 'is-landscape');
+      item.classList.add(w >= h ? 'is-landscape' : 'is-portrait');
+    }
+
+    function init() {
+      var imgs = document.querySelectorAll('.img-gallery.wechat[data-count="1"] img');
+      if (!imgs.length) return;
+      imgs.forEach(function (img) {
+        if (img.complete) {
+          classify(img);
+        } else {
+          img.addEventListener('load', function () { classify(img); }, { once: true });
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+}
+</script>
+{{ end }}

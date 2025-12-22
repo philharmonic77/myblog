@@ -1,0 +1,363 @@
+.post-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 0;
+  box-shadow: none;
+  border: 0;
+  padding: 0;
+  vertical-align: middle;
+  outline: 1px solid transparent;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  background: #fff;
+  filter: drop-shadow(0 0 0 transparent);
+}
+
+.post-content figure {
+  margin: 2rem auto;
+  line-height: 0;
+}
+
+.post-content figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.post-content img.inline {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.post-content .img-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.post-content .img-grid img {
+  margin: 0;
+}
+
+.post-content .img-gallery {
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-cols, 2), minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 2rem 0;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.post-content .img-gallery.wechat {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.post-content .img-gallery.wechat[data-count="1"] {
+  --wechat-single-max: 480px;
+}
+
+.post-content .img-gallery.wechat[data-count="1"] {
+  grid-template-columns: 1fr;
+}
+
+.post-content .img-gallery.wechat[data-count="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.post-content .img-gallery.wechat[data-count="4"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.post-content .img-gallery.wechat img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: none;
+  background: transparent;
+}
+
+.post-content .img-gallery.wechat[data-count="1"] img {
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.post-content .img-gallery.wechat[data-count="1"] .gallery-item {
+  margin: 0 auto;
+}
+
+.post-content .img-gallery.wechat[data-count="1"] img {
+  display: block;
+  margin: 0 auto;
+}
+
+.post-content .img-gallery.wechat[data-count="1"] .gallery-item.is-landscape img {
+  width: 100%;
+  max-width: var(--wechat-single-max);
+  height: auto;
+}
+
+.post-content .img-gallery.wechat[data-count="1"] .gallery-item.is-portrait img {
+  width: auto;
+  max-height: var(--wechat-single-max);
+  height: auto;
+}
+.post-content .img-gallery.masonry {
+  display: block;
+  column-count: var(--gallery-cols, 3);
+  column-gap: 0.75rem;
+}
+
+.post-content .img-gallery.masonry .gallery-item {
+  break-inside: avoid;
+  margin: 0 0 0.75rem;
+}
+
+.post-content .img-gallery.masonry img {
+  width: 100%;
+  height: auto;
+}
+
+.post-content .gallery-item {
+  margin: 0;
+  line-height: 0;
+  background: var(--theme);
+  overflow: hidden;
+}
+
+.post-content .img-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.post-content .gallery-caption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--secondary);
+}
+
+.post-content .gallery-zoom {
+  display: block;
+}
+
+.post-content .wechat-video {
+  --wechat-single-max: 480px;
+  margin: 2rem auto;
+  width: var(--wechat-video-width, 100%);
+  max-width: none;
+  padding: 0.4rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.post-content .wechat-video-frame {
+  position: relative;
+  background: #0f0f0f;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.post-content .wechat-video-frame {
+  aspect-ratio: auto;
+}
+
+.post-content .wechat-video.is-landscape .wechat-video-frame {
+  width: auto;
+  height: auto;
+}
+
+.post-content .wechat-video.is-portrait .wechat-video-frame {
+  height: auto;
+  width: auto;
+}
+
+.post-content .wechat-video-media {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.post-content .wechat-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  margin-left: -24px;
+  margin-top: -24px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+  pointer-events: none;
+}
+
+.post-content .wechat-video-play::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #fff;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 9999;
+}
+
+.gallery-lightbox-btn {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.gallery-lightbox-btn.prev {
+  left: 16px;
+}
+
+.gallery-lightbox-btn.next {
+  right: 16px;
+}
+
+.gallery-lightbox-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.gallery-lightbox-btn.prev::before {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.gallery-lightbox.open {
+  display: flex;
+}
+
+.gallery-lightbox-inner {
+  max-width: 92vw;
+  max-height: 92vh;
+}
+
+.gallery-lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 92vh;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 900px) {
+  .post-content .img-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .post-content .img-gallery.masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .post-content .img-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .post-content .img-gallery.masonry {
+    column-count: 1;
+  }
+}
+
+.post-content .video-wrap {
+  margin: 2rem auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0.8rem 0;
+}
+
+.post-content .video-wrap .responsive-video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Manual sizing helpers */
+.post-content img.w-40,
+.post-content .w-40 img,
+.post-content video.w-40,
+.post-content .w-40 video {
+  width: 40%;
+  max-width: 40%;
+}
+
+.post-content img.w-60,
+.post-content .w-60 img,
+.post-content video.w-60,
+.post-content .w-60 video {
+  width: 60%;
+  max-width: 60%;
+}
+
+.post-content img.w-80,
+.post-content .w-80 img,
+.post-content video.w-80,
+.post-content .w-80 video {
+  width: 80%;
+  max-width: 80%;
+}
+
+.post-content img.w-100,
+.post-content .w-100 img,
+.post-content video.w-100,
+.post-content .w-100 video {
+  width: 100%;
+  max-width: 100%;
+}
+
+.post-content img.center,
+.post-content video.center,
+.post-content .center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

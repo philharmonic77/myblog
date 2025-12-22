@@ -1,33 +1,205 @@
-{{/* 
+{{/*
   Hugo video shortcode
   Usage example:
-  {{< video src="/videos/demo.mp4" poster="/images/thumb.jpg" width="800" autoplay="false" loop="false" muted="false" >}}
+  {{< video src="demo.mp4" poster="poster.jpg" width="800" autoplay="false" loop="false" muted="false" preload="metadata" marker="true" >}}
 */}}
 
+{{ $page := .Page }}
 {{ $src := .Get "src" }}
 {{ $poster := .Get "poster" }}
 {{ $width := .Get "width" | default "100%" }}
 {{ $autoplay := .Get "autoplay" | default "false" }}
 {{ $loop := .Get "loop" | default "false" }}
 {{ $muted := .Get "muted" | default "false" }}
+{{ $preload := .Get "preload" | default "metadata" }}
+{{ $marker := .Get "marker" | default "false" }}
+{{ $lazy := .Get "lazy" | default "false" }}
+{{ $srcURL := "" }}
+{{ $posterURL := "" }}
+{{ $srcKind := "unknown" }}
+{{ $posterKind := "none" }}
+
+{{ if $src }}
+  {{ if strings.HasPrefix $src "/" }}
+    {{ $srcURL = $src | relURL }}
+    {{ $srcKind = "absolute" }}
+  {{ else }}
+    {{ $res := or ($page.Resources.GetMatch $src) ($page.Resources.GetMatch (printf "**/%s" $src)) }}
+    {{ if $res }}
+      {{ $srcURL = $res.RelPermalink }}
+      {{ $srcKind = "bundle" }}
+    {{ else }}
+      {{ $srcURL = $src | relURL }}
+      {{ $srcKind = "relative" }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if $poster }}
+  {{ if strings.HasPrefix $poster "/" }}
+    {{ $posterURL = $poster | relURL }}
+    {{ $posterKind = "absolute" }}
+  {{ else }}
+    {{ $pres := or ($page.Resources.GetMatch $poster) ($page.Resources.GetMatch (printf "**/%s" $poster)) }}
+    {{ if $pres }}
+      {{ $posterURL = $pres.RelPermalink }}
+      {{ $posterKind = "bundle" }}
+    {{ else }}
+      {{ $posterURL = $poster | relURL }}
+      {{ $posterKind = "relative" }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if and (not $posterURL) $src }}
+  {{ $base := strings.TrimSuffix $src (path.Ext $src) }}
+  {{ range $ext := slice "jpg" "jpeg" "png" "webp" }}
+    {{ if not $posterURL }}
+      {{ $autoPoster := printf "%s.%s" $base $ext }}
+      {{ $pres := or ($page.Resources.GetMatch $autoPoster) ($page.Resources.GetMatch (printf "**/%s" $autoPoster)) }}
+      {{ if $pres }}
+        {{ $posterURL = $pres.RelPermalink }}
+        {{ $posterKind = "auto" }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if and (not $posterURL) $src }}
+  {{ range $ext := slice "jpg" "jpeg" "png" "webp" }}
+    {{ if not $posterURL }}
+      {{ $autoPoster := printf "poster.%s" $ext }}
+      {{ $pres := or ($page.Resources.GetMatch $autoPoster) ($page.Resources.GetMatch (printf "**/%s" $autoPoster)) }}
+      {{ if $pres }}
+        {{ $posterURL = $pres.RelPermalink }}
+        {{ $posterKind = "fixed" }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 
 <style>
+.video-wrap {
+  position: relative;
+  display: block;
+  margin: 1em 0;
+}
+
 .responsive-video {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 1em 0;
 }
+
 </style>
 
-<video 
-  class="responsive-video"
-  {{ if ne $width "100%" }}width="{{ $width }}"{{ end }}
-  {{ if eq $autoplay "true" }}autoplay{{ end }}
-  {{ if eq $loop "true" }}loop{{ end }}
-  {{ if eq $muted "true" }}muted{{ end }}
-  controls
-  {{ if $poster }}poster="{{ $poster }}"{{ end }}>
-  <source src="{{ $src | relURL }}" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div class="video-wrap" data-src-kind="{{ $srcKind }}" data-poster-kind="{{ $posterKind }}" data-preload="{{ $preload }}">
+  <video
+    class="responsive-video"
+    {{ if ne $width "100%" }}width="{{ $width }}"{{ end }}
+    {{ if eq $autoplay "true" }}autoplay{{ end }}
+    {{ if eq $loop "true" }}loop{{ end }}
+    {{ if eq $muted "true" }}muted{{ end }}
+    {{ if eq $lazy "true" }}data-lazy="true"{{ end }}
+    data-autoplay-wifi="true"
+    preload="{{ if eq $lazy "true" }}none{{ else }}{{ $preload }}{{ end }}"
+    controls
+    playsinline
+    {{ if $posterURL }}poster="{{ $posterURL }}"{{ end }}>
+    {{ if eq $lazy "true" }}
+      <source data-src="{{ $srcURL }}" data-type="video/mp4">
+    {{ else }}
+      <source src="{{ $srcURL }}" type="video/mp4">
+    {{ end }}
+    Your browser does not support the video tag.
+  </video>
+  {{ if eq $marker "true" }}
+    <span class="video-marker">preload:{{ $preload }} | src:{{ $srcKind }} | poster:{{ $posterKind }}</span>
+  {{ end }}
+</div>
+
+{{ if eq $lazy "true" }}
+<script>
+if (!window.__videoLazyInit) {
+  window.__videoLazyInit = true;
+  (function () {
+    function loadVideo(el) {
+      var sources = el.querySelectorAll('source[data-src]');
+      if (!sources.length) return;
+      sources.forEach(function (s) {
+        s.src = s.getAttribute('data-src');
+        s.removeAttribute('data-src');
+        var t = s.getAttribute('data-type');
+        if (t) s.type = t;
+        s.removeAttribute('data-type');
+      });
+      el.load();
+    }
+
+    function init() {
+      var videos = document.querySelectorAll('video[data-lazy="true"]');
+      if (!videos.length) return;
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            loadVideo(entry.target);
+            io.unobserve(entry.target);
+          });
+        }, { rootMargin: '200px 0px' });
+        videos.forEach(function (v) { io.observe(v); });
+      } else {
+        videos.forEach(loadVideo);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+}
+</script>
+{{ end }}
+
+<script>
+if (!window.__videoWifiAutoplayInit) {
+  window.__videoWifiAutoplayInit = true;
+  (function () {
+    function isWifi() {
+      var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      if (!c) return false;
+      if (c.type) return c.type === 'wifi';
+      return false;
+    }
+
+    function tryAutoplay(video) {
+      if (!video || video.dataset.autoplayWifi !== 'true') return;
+      video.muted = true;
+      video.setAttribute('muted', '');
+      video.autoplay = true;
+      var p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(function () {});
+    }
+
+    function init() {
+      if (!isWifi()) return;
+      var videos = document.querySelectorAll('video[data-autoplay-wifi="true"]');
+      videos.forEach(function (video) {
+        if (video.readyState >= 2) {
+          tryAutoplay(video);
+        } else {
+          video.addEventListener('loadeddata', function () { tryAutoplay(video); }, { once: true });
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+}
+</script>

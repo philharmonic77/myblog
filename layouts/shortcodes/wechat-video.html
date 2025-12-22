@@ -1,0 +1,200 @@
+{{/*
+  WeChat-style video shortcode
+  Usage example:
+  {{< wechat-video src="assets/demo.mp4" poster="assets/poster.jpg" ratio="4/3" lazy="true" >}}
+*/}}
+
+{{ $page := .Page }}
+{{ $src := .Get "src" }}
+{{ $poster := .Get "poster" }}
+{{ $ratio := .Get "ratio" | default "4/3" }}
+{{ $width := .Get "width" | default "100%" }}
+{{ $preload := .Get "preload" | default "metadata" }}
+{{ $lazy := .Get "lazy" | default "false" }}
+{{ $srcURL := "" }}
+{{ $posterURL := "" }}
+
+{{ if not $src }}
+  {{ errorf "wechat-video shortcode requires src param" }}
+{{ end }}
+
+{{ if hasPrefix $src "/" }}
+  {{ $srcURL = $src | relURL }}
+{{ else }}
+  {{ $res := or ($page.Resources.GetMatch $src) ($page.Resources.GetMatch (printf "**/%s" $src)) }}
+  {{ if $res }}
+    {{ $srcURL = $res.RelPermalink }}
+  {{ else }}
+    {{ $srcURL = $src | relURL }}
+  {{ end }}
+{{ end }}
+
+{{ if $poster }}
+  {{ if hasPrefix $poster "/" }}
+    {{ $posterURL = $poster | relURL }}
+  {{ else }}
+    {{ $pres := or ($page.Resources.GetMatch $poster) ($page.Resources.GetMatch (printf "**/%s" $poster)) }}
+    {{ if $pres }}
+      {{ $posterURL = $pres.RelPermalink }}
+    {{ else }}
+      {{ $posterURL = $poster | relURL }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="wechat-video" style="--wechat-video-width: {{ $width }};">
+  <div class="wechat-video-frame"{{ if $ratio }} style="--wechat-video-ratio: {{ $ratio }};"{{ end }}>
+    <video
+      class="wechat-video-media"
+      {{ if eq $lazy "true" }}data-lazy="true"{{ end }}
+      data-autoplay-wifi="true"
+      preload="{{ if eq $lazy "true" }}none{{ else }}{{ $preload }}{{ end }}"
+      controls
+      playsinline
+      {{ if $posterURL }}poster="{{ $posterURL }}"{{ end }}>
+      {{ if eq $lazy "true" }}
+        <source data-src="{{ $srcURL }}" data-type="video/mp4">
+      {{ else }}
+        <source src="{{ $srcURL }}" type="video/mp4">
+      {{ end }}
+      Your browser does not support the video tag.
+    </video>
+    <span class="wechat-video-play" aria-hidden="true"></span>
+  </div>
+</div>
+
+<script>
+(function () {
+  var frame = document.currentScript && document.currentScript.previousElementSibling;
+  if (!frame || !frame.querySelector) return;
+  var wrap = frame.closest('.wechat-video');
+  var video = frame.querySelector('video');
+  var play = frame.querySelector('.wechat-video-play');
+  if (!video || !play || !wrap) return;
+  function sync() { play.style.opacity = video.paused ? '1' : '0'; }
+  video.addEventListener('play', sync);
+  video.addEventListener('pause', sync);
+  video.addEventListener('ended', sync);
+  sync();
+
+  function applySize() {
+    var w = video.videoWidth;
+    var h = video.videoHeight;
+    if (!w || !h) return;
+    wrap.classList.remove('is-portrait', 'is-landscape');
+    wrap.classList.add(w >= h ? 'is-landscape' : 'is-portrait');
+    frame.style.aspectRatio = 'auto';
+    var styles = getComputedStyle(wrap);
+    var max = parseFloat(styles.getPropertyValue('--wechat-single-max')) || 480;
+    var container = wrap.clientWidth || max;
+    if (w >= h) {
+      var maxW = Math.min(max, container);
+      var newW = maxW;
+      var newH = newW * (h / w);
+      frame.style.width = newW + 'px';
+      frame.style.height = newH + 'px';
+    } else {
+      var newH = max;
+      var newW = newH * (w / h);
+      if (newW > container) {
+        newW = container;
+        newH = newW * (h / w);
+      }
+      frame.style.width = newW + 'px';
+      frame.style.height = newH + 'px';
+    }
+  }
+
+  if (video.readyState >= 1) {
+    applySize();
+  } else {
+    video.addEventListener('loadedmetadata', applySize, { once: true });
+  }
+})();
+</script>
+
+{{ if eq $lazy "true" }}
+<script>
+if (!window.__videoLazyInit) {
+  window.__videoLazyInit = true;
+  (function () {
+    function loadVideo(el) {
+      var sources = el.querySelectorAll('source[data-src]');
+      if (!sources.length) return;
+      sources.forEach(function (s) {
+        s.src = s.getAttribute('data-src');
+        s.removeAttribute('data-src');
+        var t = s.getAttribute('data-type');
+        if (t) s.type = t;
+        s.removeAttribute('data-type');
+      });
+      el.load();
+    }
+
+    function init() {
+      var videos = document.querySelectorAll('video[data-lazy="true"]');
+      if (!videos.length) return;
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            loadVideo(entry.target);
+            io.unobserve(entry.target);
+          });
+        }, { rootMargin: '200px 0px' });
+        videos.forEach(function (v) { io.observe(v); });
+      } else {
+        videos.forEach(loadVideo);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+}
+</script>
+{{ end }}
+
+<script>
+if (!window.__videoWifiAutoplayInit) {
+  window.__videoWifiAutoplayInit = true;
+  (function () {
+    function isWifi() {
+      var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      if (!c) return false;
+      if (c.type) return c.type === 'wifi';
+      return false;
+    }
+
+    function tryAutoplay(video) {
+      if (!video || video.dataset.autoplayWifi !== 'true') return;
+      video.muted = true;
+      video.setAttribute('muted', '');
+      video.autoplay = true;
+      var p = video.play();
+      if (p && typeof p.catch === 'function') p.catch(function () {});
+    }
+
+    function init() {
+      if (!isWifi()) return;
+      var videos = document.querySelectorAll('video[data-autoplay-wifi="true"]');
+      videos.forEach(function (video) {
+        if (video.readyState >= 2) {
+          tryAutoplay(video);
+        } else {
+          video.addEventListener('loadeddata', function () { tryAutoplay(video); }, { once: true });
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+}
+</script>
