@@ -1,0 +1,43 @@
+/* Post type fonts by section. */
+.post-single.section-life {
+  font-family: "FangSong", "FangSong_GB2312", "STFangsong", "Iowan Old Style",
+    Palatino, "Palatino Linotype", "Times New Roman", Georgia, serif;
+}
+
+.post-single.section-life .post-content h1,
+.post-single.section-life .post-content h2,
+.post-single.section-life .post-content h3,
+.post-single.section-life .post-content h4 {
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.post-single.section-read {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "Kaiti TC", "Iowan Old Style",
+    Palatino, "Palatino Linotype", "Times New Roman", Georgia, serif;
+}
+
+.post-single.section-read .post-content h1,
+.post-single.section-read .post-content h2,
+.post-single.section-read .post-content h3,
+.post-single.section-read .post-content h4 {
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.post-single.section-tech {
+  font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", "STSong",
+    "SimSun", "Iowan Old Style", Palatino, "Palatino Linotype",
+    "Times New Roman", Georgia, serif;
+}
+
+.post-single.section-tech .post-content h1,
+.post-single.section-tech .post-content h2,
+.post-single.section-tech .post-content h3,
+.post-single.section-tech .post-content h4 {
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}

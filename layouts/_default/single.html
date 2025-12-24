@@ -1,6 +1,14 @@
 {{- define "main" }}
 
-<article class="post-single">
+{{- $section := .Section -}}
+{{- if .File -}}
+  {{- $dir := strings.TrimSuffix "/" .File.Dir -}}
+  {{- $parts := split $dir "/" -}}
+  {{- if ge (len $parts) 2 -}}
+    {{- $section = index $parts 1 -}}
+  {{- end -}}
+{{- end -}}
+<article class="post-single section-{{ lower $section }}">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title">
