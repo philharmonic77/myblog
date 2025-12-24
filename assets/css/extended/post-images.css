@@ -71,7 +71,18 @@
 }
 
 .post-content .img-gallery.wechat[data-count="2"] {
+  --wechat-pair-max: 600px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(100%, var(--wechat-pair-max));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content .img-gallery.wechat[data-count="3"] {
+  --wechat-trip-max: 720px;
+  width: min(100%, var(--wechat-trip-max));
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-content .img-gallery.wechat[data-count="4"] {
@@ -522,6 +533,14 @@
   .post-content .img-gallery.wechat[data-count="1"],
   .post-content .wechat-video {
     --wechat-single-max: 320px;
+  }
+
+  .post-content .img-gallery.wechat[data-count="2"] {
+    --wechat-pair-max: 420px;
+  }
+
+  .post-content .img-gallery.wechat[data-count="3"] {
+    --wechat-trip-max: 520px;
   }
 }
 
