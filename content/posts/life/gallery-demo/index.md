@@ -2,6 +2,7 @@
 title: "Gallery Demo"
 date: "2025-02-14"
 draft: true
+pet: 5
 ---
 
 This is a local-only demo page for image layout and sizing.

@@ -4,8 +4,16 @@
 {{- partial "index_profile.html" . }}
 {{- else }} {{/* if not profileMode */}}
 
+{{- $listSection := .Section -}}
+{{- if .File -}}
+  {{- $dir := strings.TrimSuffix "/" .File.Dir -}}
+  {{- $parts := split $dir "/" -}}
+  {{- if ge (len $parts) 2 -}}
+    {{- $listSection = index $parts 1 -}}
+  {{- end -}}
+{{- end -}}
 {{- if not .IsHome | and .Title }}
-<header class="page-header">
+<header class="page-header section-{{ lower $listSection }}">
   {{- partial "breadcrumbs.html" . }}
   <h1>
     {{ .Title }}
@@ -53,6 +61,15 @@
 {{- range $index, $page := $paginator.Pages }}
 
 {{- $class := "post-entry" }}
+{{- $section := .Section -}}
+{{- if .File -}}
+  {{- $dir := strings.TrimSuffix "/" .File.Dir -}}
+  {{- $parts := split $dir "/" -}}
+  {{- if ge (len $parts) 2 -}}
+    {{- $section = index $parts 1 -}}
+  {{- end -}}
+{{- end -}}
+{{- $sectionClass := printf "section-%s" (lower $section) -}}
 
 {{- $user_preferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
 {{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) (not $user_preferred)) }}
@@ -61,7 +78,7 @@
 {{- $class = "post-entry tag-entry" }}
 {{- end }}
 
-<article class="{{ $class }}">
+<article class="{{ $class }} {{ $sectionClass }}">
   {{- $isHidden := (site.Params.cover.hidden | default site.Params.cover.hiddenInList) }}
   {{- partial "cover.html" (dict "cxt" . "IsHome" true "isHidden" $isHidden) }}
   <header class="entry-header">

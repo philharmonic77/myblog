@@ -1,0 +1,115 @@
+/* One Light (light) / GitHub Dark (dark) for code blocks and inline code. */
+:root {
+  --code-bg: #f3f3f3;
+  --code-border: #e5e5e6;
+  --code-text: #383a42;
+  --hljs-bg: #fafafa;
+  --hljs-border: #e5e5e6;
+  --hljs-text: #383a42;
+}
+
+body.dark {
+  --code-bg: #2d333b;
+  --code-border: #444c56;
+  --code-text: #c9d1d9;
+  --hljs-bg: #0d1117;
+  --hljs-border: #30363d;
+  --hljs-text: #c9d1d9;
+}
+
+.post-content code {
+  color: var(--code-text);
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  padding: 3px 6px;
+  border-radius: 6px;
+}
+
+.hljs,
+.post-content .highlight:not(table),
+.post-content pre {
+  color: var(--hljs-text);
+  background: var(--hljs-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--hljs-border);
+}
+
+.post-content pre code {
+  color: inherit;
+  background: transparent !important;
+}
+
+/* One Light tokens */
+:root:not(.dark) .hljs-comment,
+:root:not(.dark) .hljs-quote { color: #a0a1a7; }
+:root:not(.dark) .hljs-keyword,
+:root:not(.dark) .hljs-selector-tag,
+:root:not(.dark) .hljs-literal,
+:root:not(.dark) .hljs-section,
+:root:not(.dark) .hljs-link,
+:root:not(.dark) .hljs-doctag { color: #a626a4; }
+:root:not(.dark) .hljs-title,
+:root:not(.dark) .hljs-name,
+:root:not(.dark) .hljs-type,
+:root:not(.dark) .hljs-class .hljs-title,
+:root:not(.dark) .hljs-number,
+:root:not(.dark) .hljs-built_in,
+:root:not(.dark) .hljs-builtin-name { color: #4078f2; }
+:root:not(.dark) .hljs-string,
+:root:not(.dark) .hljs-meta,
+:root:not(.dark) .hljs-symbol,
+:root:not(.dark) .hljs-bullet,
+:root:not(.dark) .hljs-addition,
+:root:not(.dark) .hljs-template-tag,
+:root:not(.dark) .hljs-template-variable { color: #50a14f; }
+:root:not(.dark) .hljs-attr,
+:root:not(.dark) .hljs-attribute,
+:root:not(.dark) .hljs-variable,
+:root:not(.dark) .hljs-title.class_,
+:root:not(.dark) .hljs-variable.constant_,
+:root:not(.dark) .hljs-selector-attr,
+:root:not(.dark) .hljs-selector-pseudo { color: #c18401; }
+:root:not(.dark) .hljs-number,
+:root:not(.dark) .hljs-regexp,
+:root:not(.dark) .hljs-link,
+:root:not(.dark) .hljs-literal,
+:root:not(.dark) .hljs-params { color: #986801; }
+:root:not(.dark) .hljs-deletion { color: #e45649; }
+
+/* GitHub Dark tokens */
+body.dark .hljs-comment,
+body.dark .hljs-quote { color: #8b949e; }
+body.dark .hljs-keyword,
+body.dark .hljs-selector-tag,
+body.dark .hljs-literal,
+body.dark .hljs-section,
+body.dark .hljs-link,
+body.dark .hljs-doctag { color: #ff7b72; }
+body.dark .hljs-title,
+body.dark .hljs-name,
+body.dark .hljs-type,
+body.dark .hljs-class .hljs-title,
+body.dark .hljs-number,
+body.dark .hljs-built_in,
+body.dark .hljs-builtin-name { color: #79c0ff; }
+body.dark .hljs-string,
+body.dark .hljs-meta,
+body.dark .hljs-symbol,
+body.dark .hljs-bullet,
+body.dark .hljs-addition,
+body.dark .hljs-template-tag,
+body.dark .hljs-template-variable { color: #a5d6ff; }
+body.dark .hljs-attr,
+body.dark .hljs-attribute,
+body.dark .hljs-variable,
+body.dark .hljs-title.class_,
+body.dark .hljs-variable.constant_,
+body.dark .hljs-selector-attr,
+body.dark .hljs-selector-pseudo { color: #d2a8ff; }
+body.dark .hljs-number,
+body.dark .hljs-regexp,
+body.dark .hljs-link,
+body.dark .hljs-literal,
+body.dark .hljs-params { color: #7ee787; }
+body.dark .hljs-deletion { color: #ff7b72; }

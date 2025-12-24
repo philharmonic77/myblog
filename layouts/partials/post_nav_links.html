@@ -1,4 +1,7 @@
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- if .CurrentSection -}}
+  {{- $pages = .CurrentSection.RegularPages -}}
+{{- end -}}
 {{- if and (gt (len $pages) 1) (in $pages . ) }}
 <nav class="paginav">
   {{- with $pages.Next . }}

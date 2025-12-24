@@ -10,8 +10,7 @@
 .post-single.section-life .post-content h2,
 .post-single.section-life .post-content h3,
 .post-single.section-life .post-content h4 {
-  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, "PingFang SC",
-    "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  font-family: inherit;
   font-weight: 600;
   letter-spacing: -0.005em;
 }
@@ -27,8 +26,7 @@
 .post-single.section-read .post-content h2,
 .post-single.section-read .post-content h3,
 .post-single.section-read .post-content h4 {
-  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, "PingFang SC",
-    "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  font-family: inherit;
   font-weight: 600;
   letter-spacing: -0.005em;
 }
@@ -43,8 +41,7 @@
 .post-single.section-tech .post-content h2,
 .post-single.section-tech .post-content h3,
 .post-single.section-tech .post-content h4 {
-  font-family: "Avenir Next", Avenir, "Helvetica Neue", Arial, "PingFang SC",
-    "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  font-family: inherit;
   font-weight: 600;
   letter-spacing: -0.005em;
 }
@@ -56,6 +53,7 @@
   font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
+
 
 @supports (-webkit-touch-callout: none) {
   .post-single.section-life {

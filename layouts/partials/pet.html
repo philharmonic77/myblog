@@ -1,5 +1,10 @@
-{{- if .Params.pet }}
-<div class="page-pet" aria-hidden="true" data-count="{{ .Params.pet | default 3 }}">
+{{- $petCount := .Params.pet | default 0 -}}
+{{- if gt $petCount 10 -}}
+  {{- $petCount = 10 -}}
+{{- end -}}
+{{- if gt $petCount 0 }}
+{{- $yoshiCount := sub $petCount 1 -}}
+<div class="page-pet" aria-hidden="true" data-count="{{ $yoshiCount }}">
   <div class="page-pet-layer"></div>
 </div>
 <script>
@@ -12,15 +17,18 @@ if (!window.__pagePetInit) {
 
     function makePet(layer, size, y, minX, maxX, hue, startDelay, startX) {
       var wrap = document.createElement('span');
-      wrap.className = 'page-pet-item';
+      wrap.className = 'page-pet-item page-pet-item-yoshi';
+      wrap.style.zIndex = Math.floor(rand(1, 10)).toString();
+      wrap.style.width = size + 'px';
+      wrap.style.height = size + 'px';
       var body = document.createElement('img');
-      body.className = 'page-pet-body';
-      body.src = '/img/pet-body.webp';
+      body.className = 'page-pet-body page-pet-body-yoshi';
+      body.src = '/img/pet-yoshi-body.webp';
       body.alt = '';
       body.decoding = 'async';
       var legs = document.createElement('img');
-      legs.className = 'page-pet-legs';
-      legs.src = '/img/pet-legs.webp';
+      legs.className = 'page-pet-legs page-pet-legs-yoshi';
+      legs.src = '/img/pet-yoshi-legs.webp';
       legs.alt = '';
       legs.decoding = 'async';
       var sat = rand(1.1, 1.8);
@@ -35,31 +43,75 @@ if (!window.__pagePetInit) {
         el: wrap,
         body: body,
         legs: legs,
+        size: size,
+        offsetY: -8,
+        respawn: function (layer, size, y, minX, maxX) {
+          var hue = rand(0, 360);
+          var delay = Math.floor(rand(60, 600));
+          return makePet(layer, size, y, minX, maxX, hue, delay, 0);
+        },
         x: (typeof startX === 'number') ? startX : (minX - size - rand(0, size * 2)),
         y: y,
         baseY: y,
-        vx: rand(0.02, 0.40),
+        vx: rand(0.02, 0.8),
         vy: 0,
         paused: 0,
         delay: Math.floor(startDelay || 0)
       };
     }
 
-    function wrap(p, size, w, h) {
-      if (p.x > w + size) {
-        p.x = -size - rand(0, size * 2);
-        p.el.style.opacity = '0';
-        p.delay = Math.floor(rand(60, 600));
-        p.vx = rand(0.02, 0.40);
-        var hue = rand(0, 360);
-        var sat = rand(1.1, 1.8);
-        var filter = 'hue-rotate(' + hue.toFixed(1) + 'deg) saturate(' + sat.toFixed(2) + ')';
-        if (p.body) p.body.style.filter = filter;
-        if (p.legs) p.legs.style.filter = filter;
-      }
+    function makeTotoro(layer, size, y, minX, maxX, startDelay, startX) {
+      var wrap = document.createElement('span');
+      wrap.className = 'page-pet-item page-pet-item-totoro';
+      wrap.style.zIndex = Math.floor(rand(1, 10)).toString();
+      wrap.style.width = size + 'px';
+      wrap.style.height = size + 'px';
+      var body = document.createElement('img');
+      body.className = 'page-pet-body page-pet-body-totoro';
+      body.src = '/img/pet-totoro.webp';
+      body.alt = '';
+      body.decoding = 'async';
+      wrap.appendChild(body);
+      layer.appendChild(wrap);
+      wrap.style.opacity = startDelay ? '0' : '1';
+      return {
+        el: wrap,
+        body: body,
+        legs: null,
+        noFilter: true,
+        noPause: true,
+        size: size,
+        offsetY: 0,
+        respawn: function (layer, size, y, minX, maxX) {
+          return makeTotoro(layer, size, y, minX, maxX, 0, 0);
+        },
+        x: (typeof startX === 'number') ? startX : (minX - size - rand(0, size * 2)),
+        y: y,
+        baseY: y,
+        vx: 0.12,
+        vy: 0,
+        paused: 0,
+        delay: Math.floor(startDelay || 0)
+      };
     }
 
-    function step(p, size, w, h) {
+    function wrap(p, size, w, h, layer) {
+      if (p.x > w + size) {
+        if (p.respawn) {
+          var minX = 0;
+          var maxX = w - size;
+          var y = Math.round(h - size + (p.offsetY || 0));
+          var next = p.respawn(layer, size, y, minX, maxX);
+          if (p.el && p.el.parentNode) {
+            p.el.parentNode.removeChild(p.el);
+          }
+          return next;
+        }
+      }
+      return null;
+    }
+
+    function step(p, size, w, h, layer) {
       if (p.delay > 0) {
         p.delay -= 1;
         if (p.delay === 0) {
@@ -73,34 +125,46 @@ if (!window.__pagePetInit) {
         return;
       }
       p.el.classList.remove('paused');
-      if (Math.random() < 0.002) {
+      if (!p.noPause && Math.random() < 0.002) {
         p.paused = Math.floor(rand(100, 500));
         p.vx = rand(0.02, 0.40);
         p.vy = 0;
       }
-        p.x += Math.min(p.vx, 1.2);
+      p.x += Math.min(p.vx, 1.2);
       p.y += p.vy;
-      wrap(p, size, w, h);
+      return wrap(p, size, w, h, layer);
     }
 
-    function render(p) {
-      p.el.style.transform = 'translate(' + p.x + 'px,' + p.y + 'px)';
+    function render(p, size, w, offsetX) {
+      if (size && w) {
+        var overRight = Math.max(0, (p.x + size) - w);
+        if (overRight > 0) {
+          p.el.style.clipPath = 'inset(0 ' + Math.round(overRight) + 'px 0 0)';
+        } else {
+          p.el.style.clipPath = '';
+        }
+      }
+      var x = p.x + (offsetX || 0);
+      p.el.style.transform = 'translate(' + x + 'px,' + p.y + 'px)';
     }
 
     function init() {
       var root = document.querySelector('.page-pet');
       if (!root) return;
       var layer = root.querySelector('.page-pet-layer');
-      var count = parseInt(root.getAttribute('data-count'), 10) || 3;
+      var count = parseInt(root.getAttribute('data-count'), 10) || 0;
       var size = parseFloat(getComputedStyle(root).getPropertyValue('--pet-size')) || 28;
       var pets = [];
       var host = root.closest('.post-header') || document.body;
+      var main = root.closest('.main') || document.querySelector('.main') || host;
 
       function getBounds() {
-        var rect = host.getBoundingClientRect();
-        var width = Math.max(rect.width, 120);
-        var height = Math.max(rect.height, size + 8);
-        return { w: width, h: height };
+        var hostRect = host.getBoundingClientRect();
+        var mainRect = main.getBoundingClientRect();
+        var width = Math.max(mainRect.width || hostRect.width, 120);
+        var height = Math.max(hostRect.height, size + 8);
+        var offsetX = Math.round((mainRect.left || hostRect.left) - hostRect.left);
+        return { w: width, h: height, offsetX: offsetX };
       }
 
       var bounds = getBounds();
@@ -123,21 +187,35 @@ if (!window.__pagePetInit) {
           pets.push(makePet(layer, size, y, minX, maxX, hue, delayCursor, 0));
         } else {
           delayCursor += Math.floor(rand(120, 1200));
-          pets.push(makePet(layer, size, y, minX, maxX, hue, delayCursor));
+          pets.push(makePet(layer, size, y, minX, maxX, hue, delayCursor, 0));
         }
       }
+      var totoroSize = size * 2;
+      var totoroY = Math.round(h - totoroSize + 2);
+      var totoro = makeTotoro(layer, totoroSize, totoroY, 0, bounds.w - totoroSize, 0, 0);
+      totoro.vx = 0.12;
+      totoro.offsetY = 2;
+      pets.push(totoro);
 
       function tick() {
         bounds = getBounds();
         var w = bounds.w;
         var h = bounds.h;
+        var offsetX = bounds.offsetX || 0;
         var y = Math.round(h - size);
-        pets.forEach(function (p) {
-          p.baseY = y;
-          step(p, size, w, h);
+        for (var i = 0; i < pets.length; i++) {
+          var p = pets[i];
+          var pSize = p.size || size;
+          p.baseY = Math.round(h - pSize + (p.offsetY || 0));
+          var next = step(p, pSize, w, h, layer);
+          if (next) {
+            next.offsetY = p.offsetY || 0;
+            pets[i] = next;
+            p = next;
+          }
           p.y = p.baseY;
-          render(p);
-        });
+          render(p, pSize, w, offsetX);
+        }
         requestAnimationFrame(tick);
       }
 

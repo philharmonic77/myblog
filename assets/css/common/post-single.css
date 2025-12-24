@@ -159,6 +159,7 @@
     margin: 10px auto;
     background: var(--hljs-bg) !important;
     border-radius: var(--radius);
+    overflow: hidden;
     direction: ltr;
 }
 
@@ -172,6 +173,8 @@
 
 .post-content .highlight pre {
     margin: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
 }
 
 .post-content .highlighttable {

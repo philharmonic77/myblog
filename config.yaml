@@ -27,7 +27,7 @@ permalinks: # 访问博客时网址的显示形式
   posts: "/:year/:month/:day/:title/"
 
 defaultContentLanguage: en # 最顶部首先展示的语言页面
-defaultContentLanguageInSubdir: true
+defaultContentLanguageInSubdir: false
 
 languages:
   en:
@@ -181,7 +181,7 @@ markup:
     codeFences: true
     guessSyntax: true
     # lineNos: true
-    noClasses: true
+    noClasses: false
     tabWidth: 4
     style: monokai
     # codeFences：代码围栏功能，这个功能一般都要设为 true 的，不然很难看，就是干巴巴的-代码文字，没有颜色。

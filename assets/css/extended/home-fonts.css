@@ -1,0 +1,71 @@
+/* Home/list typography tweaks for better hierarchy (easy rollback). */
+.entry-header h2,
+.first-entry .entry-header h1 {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 26px;
+  line-height: 1.28;
+}
+
+.entry-content,
+.first-entry .entry-content {
+  font-size: 15.5px;
+  line-height: 1.78;
+  letter-spacing: 0.01em;
+}
+
+.entry-footer,
+.first-entry .entry-footer {
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+}
+
+.post-entry.section-life,
+.post-entry.section-life .entry-header,
+.post-entry.section-life .entry-content,
+.post-entry.section-life .entry-footer,
+.first-entry.section-life,
+.first-entry.section-life .entry-header,
+.first-entry.section-life .entry-content,
+.first-entry.section-life .entry-footer,
+.page-header.section-life,
+.page-header.section-life h1,
+.page-header.section-life .post-description {
+  font-family: "FangSong", "FangSong_GB2312", "STFangsong", "Songti SC",
+    "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun",
+    "Iowan Old Style", Palatino, "Palatino Linotype", "Times New Roman",
+    Georgia, serif !important;
+}
+
+.post-entry.section-read,
+.post-entry.section-read .entry-header,
+.post-entry.section-read .entry-content,
+.post-entry.section-read .entry-footer,
+.first-entry.section-read,
+.first-entry.section-read .entry-header,
+.first-entry.section-read .entry-content,
+.first-entry.section-read .entry-footer,
+.page-header.section-read,
+.page-header.section-read h1,
+.page-header.section-read .post-description {
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", "Kaiti TC", "Songti SC",
+    "STSong", "Noto Serif CJK SC", "Source Han Serif SC", "SimSun",
+    "Iowan Old Style", Palatino, "Palatino Linotype", "Times New Roman",
+    Georgia, serif !important;
+}
+
+.post-entry.section-tech,
+.post-entry.section-tech .entry-header,
+.post-entry.section-tech .entry-content,
+.post-entry.section-tech .entry-footer,
+.first-entry.section-tech,
+.first-entry.section-tech .entry-header,
+.first-entry.section-tech .entry-content,
+.first-entry.section-tech .entry-footer,
+.page-header.section-tech,
+.page-header.section-tech h1,
+.page-header.section-tech .post-description {
+  font-family: "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC",
+    "STSong", "SimSun", "Iowan Old Style", Palatino, "Palatino Linotype",
+    "Times New Roman", Georgia, serif !important;
+}
