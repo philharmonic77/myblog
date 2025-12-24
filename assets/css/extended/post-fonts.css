@@ -48,3 +48,23 @@
   font-weight: 600;
   letter-spacing: -0.005em;
 }
+
+.post-single.section-tech .post-content code,
+.post-single.section-tech .post-content pre,
+.post-single.section-tech .post-content kbd,
+.post-single.section-tech .post-content samp {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .post-single.section-life {
+    font-family: "Songti SC", "STSong", "Noto Serif CJK SC",
+      "Source Han Serif SC", "SimSun", serif;
+  }
+
+  .post-single.section-read {
+    font-family: "Kaiti SC", "STKaiti", "KaiTi", "Songti SC", "STSong",
+      "Noto Serif CJK SC", "Source Han Serif SC", "SimSun", serif;
+  }
+}
