@@ -23,8 +23,11 @@
 }
 
 .logo a {
+    font-family: "Avenir Next", "Optima", "Helvetica Neue", "PingFang SC",
+        "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
     font-size: 24px;
     font-weight: 700;
+    letter-spacing: 0.005em;
 }
 
 .logo a img, .logo a svg {
@@ -62,7 +65,10 @@ body:not(.dark) #sun {
 }
 
 #menu a {
+    font-family: "Avenir Next", "Optima", "Helvetica Neue", "PingFang SC",
+        "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
     font-size: 16px;
+    letter-spacing: 0.005em;
 }
 
 #menu .active {
@@ -84,8 +90,11 @@ body:not(.dark) #sun {
 
 .lang-switch a {
     margin: auto 3px;
+    font-family: "Avenir Next", "Optima", "Helvetica Neue", "PingFang SC",
+        "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
     font-size: 16px;
     font-weight: 500;
+    letter-spacing: 0.005em;
 }
 
 .logo-switches {

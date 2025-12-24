@@ -46,6 +46,12 @@
   letter-spacing: -0.005em;
 }
 
+.post-single.section-default {
+  font-family: "Avenir Next", "Optima", "Helvetica Neue",
+    "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC",
+    "Microsoft YaHei", sans-serif;
+}
+
 .post-single.section-tech .post-content code,
 .post-single.section-tech .post-content pre,
 .post-single.section-tech .post-content kbd,

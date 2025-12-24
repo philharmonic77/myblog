@@ -8,7 +8,11 @@
     {{- $section = index $parts 1 -}}
   {{- end -}}
 {{- end -}}
-<article class="post-single section-{{ lower $section }}">
+{{- $sectionClass := lower $section -}}
+{{- if not $sectionClass -}}
+  {{- $sectionClass = "default" -}}
+{{- end -}}
+<article class="post-single section-{{ $sectionClass }}">
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
     <h1 class="post-title">
