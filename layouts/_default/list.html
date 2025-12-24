@@ -89,9 +89,33 @@
       {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
     </h2>
   </header>
-  {{- if (ne (.Param "hideSummary") true) }}
+  {{- $hideSummaryForPosts := and $.IsSection (eq $.Section "posts") (eq $.RelPermalink "/posts/") -}}
+  {{- if and (ne (.Param "hideSummary") true) (not $hideSummaryForPosts) }}
   <div class="entry-content">
-    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    {{- $summary := "" -}}
+    {{- $isTruncated := false -}}
+    {{- $hasMore := false -}}
+    {{- if .Params.summary -}}
+      {{- $summary = .Summary | plainify | htmlUnescape -}}
+    {{- else -}}
+      {{- $raw := .RawContent -}}
+      {{- $parts := split $raw "<!--more-->" -}}
+      {{- $rawSummary := index $parts 0 -}}
+      {{- $rawSummary = replaceRE "{{<[^>]*>}}" "" $rawSummary -}}
+      {{- $rawSummary = replaceRE "{{%[^%]*%}}" "" $rawSummary -}}
+      {{- $summary = $rawSummary | markdownify | plainify | htmlUnescape -}}
+      {{- if gt (len $parts) 1 -}}
+        {{- $hasMore = true -}}
+      {{- else -}}
+        {{- $summaryLength := site.Params.summaryLength | default 70 -}}
+        {{- $summaryTrunc := $summary | truncate $summaryLength -}}
+        {{- if ne $summaryTrunc $summary -}}
+          {{- $summary = $summaryTrunc -}}
+          {{- $isTruncated = true -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    <p>{{ $summary }}{{ if or $isTruncated $hasMore }}...{{ end }}</p>
   </div>
   {{- end }}
   {{- if not (.Param "hideMeta") }}
