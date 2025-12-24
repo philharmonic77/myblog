@@ -58,6 +58,8 @@
 {{- end }}
 
 {{- $term := .Data.Term }}
+{{- $wrapPosts := and (eq $listSection "posts") (not .IsHome) -}}
+{{- if $wrapPosts }}<div class="posts-list">{{- end }}
 {{- range $index, $page := $paginator.Pages }}
 
 {{- $class := "post-entry" }}
@@ -100,6 +102,7 @@
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
 {{- end }}
+{{- if $wrapPosts }}</div>{{- end }}
 
 {{- if gt $paginator.TotalPages 1 }}
 <footer class="page-footer">

@@ -20,6 +20,29 @@
   letter-spacing: 0.03em;
 }
 
+/* Unify /posts/ list typography with home page. */
+.posts-list .post-entry,
+.posts-list .first-entry,
+.posts-list .entry-header,
+.posts-list .entry-content,
+.posts-list .entry-footer,
+.posts-list .post-entry.section-life,
+.posts-list .post-entry.section-read,
+.posts-list .post-entry.section-tech,
+.posts-list .post-entry.section-life .entry-header,
+.posts-list .post-entry.section-read .entry-header,
+.posts-list .post-entry.section-tech .entry-header,
+.posts-list .post-entry.section-life .entry-content,
+.posts-list .post-entry.section-read .entry-content,
+.posts-list .post-entry.section-tech .entry-content,
+.posts-list .post-entry.section-life .entry-footer,
+.posts-list .post-entry.section-read .entry-footer,
+.posts-list .post-entry.section-tech .entry-footer {
+  font-family: "Avenir Next", "Optima", "Helvetica Neue",
+    "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC",
+    "Microsoft YaHei", sans-serif !important;
+}
+
 .post-entry.section-life,
 .post-entry.section-life .entry-header,
 .post-entry.section-life .entry-content,

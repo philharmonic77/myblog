@@ -1,7 +1,14 @@
 /* Wider layout on large screens to reduce side whitespace. */
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   :root {
-    --main-width: 860px;
-    --nav-width: 1120px;
+    --main-width: 980px;
+    --nav-width: 1280px;
+  }
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --main-width: 1100px;
+    --nav-width: 1400px;
   }
 }
