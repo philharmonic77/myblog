@@ -1,0 +1,37 @@
+{{/*
+  Simple audio shortcode
+  Usage: {{< audio src="assets/demo.mp3" >}}
+*/}}
+
+{{ $src := .Get "src" }}
+{{ if not $src }}
+  {{ errorf "audio shortcode requires src param" }}
+{{ end }}
+
+{{ $page := .Page }}
+{{ $srcURL := "" }}
+{{ if hasPrefix $src "/" }}
+  {{ $srcURL = $src | relURL }}
+{{ else }}
+  {{ $res := or ($page.Resources.GetMatch $src) ($page.Resources.GetMatch (printf "**/%s" $src)) }}
+  {{ if $res }}
+    {{ $srcURL = $res.RelPermalink }}
+  {{ else }}
+    {{ $srcURL = $src | relURL }}
+  {{ end }}
+{{ end }}
+
+{{ $type := .Get "type" | default "audio/mpeg" }}
+{{ $preload := .Get "preload" | default "metadata" }}
+{{ $loop := .Get "loop" | default "false" }}
+{{ $autoplay := .Get "autoplay" | default "false" }}
+
+<div class="audio-embed">
+  <audio
+    controls
+    preload="{{ $preload }}"
+    {{ if eq $loop "true" }}loop{{ end }}
+    {{ if eq $autoplay "true" }}autoplay{{ end }}>
+    <source src="{{ $srcURL }}" type="{{ $type }}">
+  </audio>
+</div>
