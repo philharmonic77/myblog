@@ -56,45 +56,47 @@
 {{ $layout := .Get "layout" | default "grid" }}
 {{ $zoom := .Get "zoom" | default "true" }}
 
-<div class="img-gallery{{ if eq $layout "masonry" }} masonry{{ end }}{{ if eq $layout "wechat" }} wechat{{ end }}" style="--gallery-cols: {{ $colsFinal }};" data-count="{{ $count }}" data-layout="{{ $layout }}">
-  {{ range $i, $src := $images }}
-    {{ $srcURL := "" }}
-    {{ if hasPrefix $src "/" }}
-      {{ $srcURL = $src | relURL }}
-    {{ else }}
-      {{ $res := or ($page.Resources.GetMatch $src) ($page.Resources.GetMatch (printf "**/%s" $src)) }}
-      {{ if $res }}
-        {{ $srcURL = $res.RelPermalink }}
-      {{ else }}
+<div class="img-gallery-wrap">
+  <div class="img-gallery{{ if eq $layout "masonry" }} masonry{{ end }}{{ if eq $layout "wechat" }} wechat{{ end }}" style="--gallery-cols: {{ $colsFinal }};" data-count="{{ $count }}" data-layout="{{ $layout }}">
+    {{ range $i, $src := $images }}
+      {{ $srcURL := "" }}
+      {{ if hasPrefix $src "/" }}
         {{ $srcURL = $src | relURL }}
-      {{ end }}
-    {{ end }}
-
-    {{ $caption := "" }}
-    {{ if lt $i (len $captions) }}
-      {{ $caption = trim (index $captions $i) " " }}
-    {{ end }}
-
-    {{ $alt := "" }}
-    {{ if lt $i (len $alts) }}
-      {{ $alt = trim (index $alts $i) " " }}
-    {{ else if $caption }}
-      {{ $alt = $caption }}
-    {{ end }}
-
-    <figure class="gallery-item">
-      {{ if eq $zoom "true" }}
-        <a class="gallery-zoom" href="{{ $srcURL }}" data-full="{{ $srcURL }}">
-          <img loading="lazy" src="{{ $srcURL }}" alt="{{ $alt }}" draggable="false"{{ if $ratio }} style="aspect-ratio: {{ $ratio }}; object-fit: cover;"{{ end }}>
-        </a>
       {{ else }}
-        <img loading="lazy" src="{{ $srcURL }}" alt="{{ $alt }}" draggable="false"{{ if $ratio }} style="aspect-ratio: {{ $ratio }}; object-fit: cover;"{{ end }}>
+        {{ $res := or ($page.Resources.GetMatch $src) ($page.Resources.GetMatch (printf "**/%s" $src)) }}
+        {{ if $res }}
+          {{ $srcURL = $res.RelPermalink }}
+        {{ else }}
+          {{ $srcURL = $src | relURL }}
+        {{ end }}
       {{ end }}
-      {{ if $caption }}
-        <figcaption class="gallery-caption">{{ $caption }}</figcaption>
+
+      {{ $caption := "" }}
+      {{ if lt $i (len $captions) }}
+        {{ $caption = trim (index $captions $i) " " }}
       {{ end }}
-    </figure>
-  {{ end }}
+
+      {{ $alt := "" }}
+      {{ if lt $i (len $alts) }}
+        {{ $alt = trim (index $alts $i) " " }}
+      {{ else if $caption }}
+        {{ $alt = $caption }}
+      {{ end }}
+
+      <figure class="gallery-item">
+        {{ if eq $zoom "true" }}
+          <a class="gallery-zoom" href="{{ $srcURL }}" data-full="{{ $srcURL }}">
+            <img loading="lazy" src="{{ $srcURL }}" alt="{{ $alt }}" draggable="false"{{ if $ratio }} style="aspect-ratio: {{ $ratio }}; object-fit: cover;"{{ end }}>
+          </a>
+        {{ else }}
+          <img loading="lazy" src="{{ $srcURL }}" alt="{{ $alt }}" draggable="false"{{ if $ratio }} style="aspect-ratio: {{ $ratio }}; object-fit: cover;"{{ end }}>
+        {{ end }}
+        {{ if $caption }}
+          <figcaption class="gallery-caption">{{ $caption }}</figcaption>
+        {{ end }}
+      </figure>
+    {{ end }}
+  </div>
 </div>
 
 {{ if eq $zoom "true" }}

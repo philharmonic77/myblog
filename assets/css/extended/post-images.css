@@ -46,10 +46,7 @@
   margin: 0;
 }
 
-.post-content .img-gallery {
-  display: grid;
-  grid-template-columns: repeat(var(--gallery-cols, 2), minmax(0, 1fr));
-  gap: 0.75rem;
+.post-content .img-gallery-wrap {
   margin-top: 1.2rem;
   margin-bottom: 2rem;
   padding: 0.8rem 0;
@@ -57,9 +54,18 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
+.post-content .img-gallery {
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-cols, 2), minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
 .post-content .img-gallery.wechat {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.4rem;
+  --wechat-gap: 0.4rem;
+  gap: var(--wechat-gap);
 }
 
 .post-content .img-gallery.wechat[data-count="1"] {
@@ -86,7 +92,23 @@
 }
 
 .post-content .img-gallery.wechat[data-count="4"] {
+  --wechat-trip-max: 720px;
+  width: min(100%, calc((var(--wechat-trip-max) * 2 - var(--wechat-gap)) / 3));
+  margin-left: auto;
+  margin-right: auto;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.post-content .img-gallery.wechat[data-count="5"],
+.post-content .img-gallery.wechat[data-count="6"],
+.post-content .img-gallery.wechat[data-count="7"],
+.post-content .img-gallery.wechat[data-count="8"],
+.post-content .img-gallery.wechat[data-count="9"] {
+  --wechat-trip-max: 720px;
+  width: min(100%, var(--wechat-trip-max));
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .post-content .img-gallery.wechat img:not(.img-watermark-icon) {
@@ -540,6 +562,19 @@
   }
 
   .post-content .img-gallery.wechat[data-count="3"] {
+    --wechat-trip-max: 520px;
+  }
+
+  .post-content .img-gallery.wechat[data-count="4"] {
+    --wechat-trip-max: 520px;
+    width: min(100%, calc((var(--wechat-trip-max) * 2 - var(--wechat-gap)) / 3));
+  }
+
+  .post-content .img-gallery.wechat[data-count="5"],
+  .post-content .img-gallery.wechat[data-count="6"],
+  .post-content .img-gallery.wechat[data-count="7"],
+  .post-content .img-gallery.wechat[data-count="8"],
+  .post-content .img-gallery.wechat[data-count="9"] {
     --wechat-trip-max: 520px;
   }
 }
