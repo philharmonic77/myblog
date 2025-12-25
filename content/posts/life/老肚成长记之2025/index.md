@@ -164,6 +164,10 @@ ps：图一这个照片是11月拍的，肚肚头上的灰色帽子我叫它“�
   {{< wechat-video src="assets/VIDEO_1012_2.mp4" lazy="true" >}}
 </div>
 
+### 10-08
+我看过snoopy的一集——《幸福是一条温暖的毛毯》，就想给老肚也搞一个类似的abubu。选来选去买了新加坡产的这个小羊抱枕，结果至今（年底）他也没喜欢上。但是刚买的时候有过很有意思的互动。
+  {{< wechat-video src="assets/VIDEO_1008_1.mp4" lazy="true" >}}
+
 ### 10-01
 我和奔奔各自和老儿子的一些照片：奔奔和肚肚比，是大只和小只，虽然很多人都说肚肚很高；我对肚肚，每次看到他，眼睛里都只剩下喜欢😍
 {{< gallery images="assets/IMG_1001_1.jpeg,assets/IMG_1001_2.jpeg,assets/IMG_1001_3.jpeg,assets/IMG_1001_4.jpeg" layout="wechat" >}}
@@ -174,18 +178,24 @@ ps：图一这个照片是11月拍的，肚肚头上的灰色帽子我叫它“�
   {{< wechat-video src="assets/VIDEO_0930_1.mp4" lazy="true" >}}
   {{< wechat-video src="assets/VIDEO_0930_2.mp4" lazy="true" >}}
 </div>
+咱们家有个小小抱抱精，但是可爱爆了有没有。每一次都无法拒绝，以失败告终。
+  {{< wechat-video src="assets/VIDEO_0930_3.mp4" lazy="true" >}}
 
 ### 09-25
 肚崽对奔奔的喜欢让人嫉妒。每天只要奔奔下班回家一进门，肚崽看到他就恨不能跳起来，整个激动地笑个不停。我感觉奔奔非常开心又有点尴尬（主要是觉得我会吃醋吧😅）
 
 ### 09-15
 肚肚终于发现了自己的jio jio，每天抱着啃。但是现在只会啃左脚。
-吃脚趾 伸手要抱 坐椅子 （配图）游泳蹬水（配图）
+吃脚趾 游泳蹬水（配图）
+
+### 09-14
+给老肚买了stokke成长椅，这椅子对胖宝不太友善。来看看我们第一次坐椅子的小戏精肚吧～（后来椅子闲置了许久许久）
+{{< wechat-video src="assets/VIDEO_0914_1.mp4" lazy="true" >}}
+
 
 ### 09-07
 最近喜欢“仰泳“，喜欢吃米粉，喜欢五个手指并用在床单上抓抓~  
 最重要的是，可以翻身到180度俯卧，再翻回来啦！
-
 {{< wechat-video src="assets/VIDEO_0907_1.mp4" lazy="true" >}}
 
 
