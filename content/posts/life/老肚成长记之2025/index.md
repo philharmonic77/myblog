@@ -379,9 +379,16 @@ A：小的该死小的该死！被那孙猴子识破了！求大王饶命啊！�
 {{< gallery images="assets/IMG_0601_1.jpeg,assets/IMG_0601_2.jpeg" layout="wechat" >}}
 
 ### 05-28
-
 我儿子的颜值真高，躺着和竖抱起来，由于肉肉的走向不同，他有不同的样子。最近常常被他开心时候发出的一连串奶音吸引过去。马上就满90天了，夜里仍旧哼唧、扭动、抓脸不停。
 {{< gallery images="assets/IMG_0528_1.jpeg,assets/IMG_0528_2.jpeg" layout="wechat" >}}
+
+### 05-25
+奔奔在有模有样地哄睡肚肚，肚肚的手使劲在空中比划。
+{{< wechat-video src="assets/VIDEO_0525_1.mp4"  lazy="true" >}}
+
+### 05-24
+肚肚属蛇，外婆也是。今年春节肚肚还没有出生，我特意买了小蛇主题的福字。最近被他注意到啦。
+{{< wechat-video src="assets/VIDEO_0524_1.mp4"  lazy="true" >}}
 
 ### 05-19
 每天盯着自己的手手看，有时候还举起手来看。对什么都充满好奇~
@@ -394,12 +401,65 @@ A：小的该死小的该死！被那孙猴子识破了！求大王饶命啊！�
 以前只会舔舔小拳头，现在学会吮吸大拇指了。
 {{< gallery images="assets/IMG_0518_2.jpeg" layout="wechat" >}}
 
-### 05-06
-开心的时候会发出"阿咕"的奶音
-{{< gallery images="assets/IMG_0506_1.jpg" layout="wechat" >}}
+### 05-17
+奔奔可喜欢将睡未睡的肚肚了，就是这样迷迷糊糊的小样儿！小毛桃趴在爸爸肩上，好治愈。
+{{< gallery images="assets/IMG_0517_1.jpeg,assets/IMG_0517_2.jpeg" layout="wechat" >}}
 
-### 05-01
-奔奔利用五一假期对我培训，我终于学会了竖抱肚肚，且内心不感到害怕。之前偷偷羡慕外婆和奔奔很久了，老儿子可以趴在他们身上睡觉。但我就不敢也不行。
+### 05-13
+奔奔利用五一假期对我培训，我终于学会了竖抱肚肚（横抱的话4月份就会），且内心不感到害怕。之前偷偷羡慕外婆和奔奔很久了，老儿子可以趴在他们身上睡觉。
+{{< gallery images="assets/IMG_0513_1.jpeg,assets/IMG_0513_2.jpeg" layout="wechat" >}}
+肚肚在努力地学习抬头技能，对阳台上花花绿绿的衣服袜子很感兴趣。
+{{< wechat-video src="assets/VIDEO_0513_2.mp4"  lazy="true" >}}
+
+
+### 05-11
+最近阿肚在看卡片比较多，喜欢小猴子、小松鼠和小男孩。
+{{< wechat-video src="assets/VIDEO_0511_1.mp4"  lazy="true" >}}
+
+### 05-06
+开心的时候会发出"阿咕"的奶音。
+{{< gallery images="assets/IMG_0506_1.jpg" layout="wechat" >}}
+为了录肚肚的各种声音，我时常开着录音，但精彩都是可遇而不可求的。在8月份和10月份录到了比较满意的肚崽音，且听且珍惜哦。
+{{< audio src="assets/AUDIO_0811_1.m4a" type="audio/mp4" >}}
+{{< audio src="assets/AUDIO_1003_1.m4a" type="audio/mp4" >}}
+
+### 05-05
+来自肚崽猝不及防的甜蜜暴击
+{{< wechat-video src="assets/VIDEO_0505_1.mp4"  lazy="true" >}}
+
+### 04-30
+肚肚从26号到30号的睡睡照，最后两张是去接种疫苗哦，用推车睡篮装着去的～
+{{< gallery images="assets/IMG_0430_1.jpeg,assets/IMG_0430_2.jpeg,assets/IMG_0430_3.jpeg,assets/IMG_0430_4.jpeg" layout="wechat" >}}
+
+### 04-19
+除了胀气、乳糖酶、益生菌，也是有很多美好的瞬间。肚肚学着抓握小沙锤。
+{{< wechat-video src="assets/VIDEO_0419_4.mp4" poster="assets/IMG_0419_3.jpeg"lazy="true" >}}
+肚肚睡着了还是让人觉得特别安静平和。
+{{< gallery images="assets/IMG_0419_1.jpeg,assets/IMG_0419_2.jpeg" layout="wechat" >}}
+
+### 04-17
+外婆累了。但肚肚笑了，心就化了。
+{{< gallery images="assets/IMG_0417_1.jpeg" layout="wechat" >}}
+
+### 04-12
+拍嗝！拍嗝！！每餐结束都要拍嗝！胀气实在太不舒服了！
+{{< gallery images="assets/IMG_0412_1.jpeg" layout="wechat" >}}
+今天回到一妇婴体检，医生说了一大堆关于肚肚太瘦，应该是牛奶蛋白过敏之类的。给了一大堆方案，乍一听我被唬住了，但最终我和奔奔都没采纳。事实证明这些都是误诊，我崽这时候已经在蓄力了，要不了多久就变成了一个人见人夸的小胖子😊 并且添加辅食之后，会让他明显过敏的食物也没发现。
+
+### 04-08
+回家才是对我们真正考验的开始。这个时期的小肚，懵懂又无辜。  
+{{< wechat-video src="assets/VIDEO_0408_1.mp4" lazy="true" >}}
+ 
+这个时期的他，身体很不舒服。都说二月闹，夜里真的很不安分。一直哼哼唧唧，小手绕着自己的脑袋到处挥舞。上半夜我们会在肚肚睡不安稳时嘘一嘘，握住它小小的拳头；到了临近四五点钟，肚肚的哼唧基本是停不下来了。这时候只能是外婆或者奔奔把他抱起来让他趴在他们身上睡（不要问为什么不是我，我很弱）。
+
+我们白天也想让他趴着睡，这样可以减轻胀气的不适感，睡得更安稳些。可是这么小的肚肚，把他翻过来实是个技术活。 
+{{< wechat-video src="assets/VIDEO_0408_2.mp4" lazy="true" >}}
+喝完奶，肚崽总是会做下面的表情。作为父母，我们很喜欢他的每种样子。奔奔对我说这像是小弥勒佛。喝饱了或者睡着了，他都会发出很满足的声音，超级好听。
+{{< gallery images="assets/IMG_0408_3.jpeg" layout="wechat" >}}
+
+
+### 04-06
+‼️今天第一次用推车带小肚在小区里溜达了。
 
 ### 04-02
 在月子中心住满了28天，就到今天啦。老肚穿着全套栗栗🌰服，戴着小帽子。走吧！回自己家啦！回家的车程只有10min，他坐在cybex的安全座椅上，哇哇直哭😂
@@ -456,7 +516,7 @@ A：小的该死小的该死！被那孙猴子识破了！求大王饶命啊！�
 {{< gallery images="assets/IMG_0308_1.jpeg,assets/IMG_0308_2.jpeg" layout="wechat" >}}
 
 ### 03-07
-唔🤔很毛很毛，像一块臭豆腐，我很喜欢。
+唔🤔很毛很毛，像一块臭豆腐，我很喜欢。在妈妈怀里无意识地微笑，被捕捉到啦。
 {{< gallery images="assets/IMG_0307_1.jpeg,assets/IMG_0307_2.jpeg,assets/IMG_0307_3.jpeg" layout="wechat" >}}
 
 ### 03-05
