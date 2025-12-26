@@ -9,7 +9,9 @@
 {{- end }}
 
 {{- if (.Param "ShowWordCount") -}}
-{{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
+{{- $raw := .RawContent | replaceRE "{{<[^>]*>}}" " " | replaceRE "{{%[^%]*%}}" " " | plainify | htmlUnescape -}}
+{{- $wordCount := countwords $raw -}}
+{{- $scratch.Add "meta" (slice (i18n "words" $wordCount | default (printf "%d words" $wordCount))) }}
 {{- end }}
 
 {{- with (partial "author.html" .) }}
