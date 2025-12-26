@@ -42,31 +42,32 @@
   {{ end }}
 {{ end }}
 
-<div class="wechat-video" style="--wechat-video-width: {{ $width }};">
-  <div class="wechat-video-frame"{{ if $ratio }} style="--wechat-video-ratio: {{ $ratio }};"{{ end }}>
-    <video
-      class="wechat-video-media"
-      {{ if eq $lazy "true" }}data-lazy="true"{{ end }}
-      data-autoplay-wifi="true"
-      preload="{{ if eq $lazy "true" }}none{{ else }}{{ $preload }}{{ end }}"
-      controls
-      playsinline
-      controlsList="nodownload"
-      disablepictureinpicture
-      oncontextmenu="return false"
-      {{ if $posterURL }}poster="{{ $posterURL }}"{{ end }}>
-      {{ if eq $lazy "true" }}
-        <source data-src="{{ $srcURL }}" data-type="video/mp4">
-      {{ else }}
-        <source src="{{ $srcURL }}" type="video/mp4">
-      {{ end }}
-      Your browser does not support the video tag.
-    </video>
-    <span class="wechat-video-play" aria-hidden="true"></span>
+<div class="video-wrap">
+  <div class="wechat-video" style="--wechat-video-width: {{ $width }};">
+    <div class="wechat-video-frame"{{ if $ratio }} style="--wechat-video-ratio: {{ $ratio }};"{{ end }}>
+      <video
+        class="wechat-video-media"
+        {{ if eq $lazy "true" }}data-lazy="true"{{ end }}
+        data-autoplay-wifi="true"
+        preload="{{ if eq $lazy "true" }}none{{ else }}{{ $preload }}{{ end }}"
+        controls
+        playsinline
+        controlsList="nodownload"
+        disablepictureinpicture
+        oncontextmenu="return false"
+        {{ if $posterURL }}poster="{{ $posterURL }}"{{ end }}>
+        {{ if eq $lazy "true" }}
+          <source data-src="{{ $srcURL }}" data-type="video/mp4">
+        {{ else }}
+          <source src="{{ $srcURL }}" type="video/mp4">
+        {{ end }}
+        Your browser does not support the video tag.
+      </video>
+      <span class="wechat-video-play" aria-hidden="true"></span>
+    </div>
   </div>
-</div>
 
-<script>
+  <script>
 (function () {
   var frame = document.currentScript && document.currentScript.previousElementSibling;
   if (!frame || !frame.querySelector) return;
@@ -132,7 +133,8 @@
     video.addEventListener('loadedmetadata', applySize, { once: true });
   }
 })();
-</script>
+  </script>
+</div>
 
 {{ if eq $lazy "true" }}
 <script>
